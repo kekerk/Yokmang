@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>표 관련 css</title>
+<style type="text/css">
+	.schedule {
+		border-collapse: separate;
+		margin : 20px;
+	}
+	td {
+		border : 1px solid black;
+		padding : 10px;
+		text-align : center;
+		empty-cells: hide; /* show (기본값) */
+		height : 100px;
+		width : 150px;
+	}
+	.va1 {
+	vertical-align : top; /* td 안에서 가장 상단에 위치 설정 */
+	text-align: left;
+	}
+	.va2 {
+	vertical-align: bottom; /* td 안에서 가장 하단에 위치 설정 */
+	text-align: right;
+	}
+	.va3{
+	vertical-align: middle; /* td 안에서 중간에 위치 설정 (기본값)*/
+	text-align : center; /* td 안에서 중간에 위치 설정 (기본값)*/
+	}
+.table1 td {
+	border : 1px dotted red;
+	vertical-align : middle; /* vertical-align의 가운데는 middle */
+	text-align : center; /* text-align의 가운데는 center */
+	}	
+</style>
+</head>
+<body>
+<table class ="schedule" id="tb1">
+	<caption>프로축구 경기 일정</caption> <!--  table 제목 -->
+	<tr><td class="va1">울산</td><td class="va2">울산 vs 인천</td><td class="va3">TV 중계</td></tr>
+	<tr><td class="va1">부산</td><td class="va2">부산 vs 대전</td><td></td></tr>
+	<tr><td class="va1">서울</td><td class="va2">서울 vs 강원</td><td></td></tr>
+</table>
+<h3>class가 table1인 table은 테두리를 점선으로 변경하기.<br>
+	내용을 중간에 배치하기</h3>
+<table class ="table1">
+	<caption>프로축구 경기 일정</caption> <!--  table 제목 -->
+	<tr><td class="va1">울산</td><td class="va2">울산 vs 인천</td><td class="va3">TV 중계</td></tr>
+	<tr><td class="va1">부산</td><td class="va2">부산 vs 대전</td><td></td></tr>
+	<tr><td class="va1">서울</td><td class="va2">서울 vs 강원</td><td></td></tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

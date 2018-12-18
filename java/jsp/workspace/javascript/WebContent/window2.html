@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- 
+	/WebContent/window2.html
+ -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>window 제공 함수</title>
+</head>
+<body>
+<h3>window가 제공하는 함수</h3>
+<hr> <!--  수평선 한줄 -->
+<!--  <head>에서 구현하지 않고 <body> 에서 <script type="text/javascript"> 실행 -->
+<script type="text/javascript"> //System.out.println();과 같은 기능.
+	var i=2;
+	document.write("eval(3+4*(5-i))=" + eval(3+4*(5-i)) +"<br>"); 
+	document.write("isNaN('1')="+isNaN('1')+"<br>"); //숫자가 아니니 true 숫자면 false
+	document.write("parseInt('10')="+parseInt('10')+"<br>");
+	document.write("parseInt('10',8)="+parseInt('10',8)+"<br>"); // 8진수 10은 10진수로 8
+	document.write("parseInt('FF',16)="+parseInt('FF',16));
+</script>
+</body>
+</html>

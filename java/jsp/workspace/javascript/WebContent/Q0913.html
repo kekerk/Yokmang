@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function switch1(f){
+		var cg = f.value;
+		img1.src =  cg;
+}
+</script>
+</head>
+<body>
+과일을 선택하면 해당 과일 그림을 그린다.
+<hr noshade="noshade">
+<table>
+  <tr><td><select style="width:100px; height:20px" onchange="switch1(this)">
+           <option value="img/strawberry.gif">딸기</option>
+           <option value="img/banana.gif" selected>바나나</option>
+           <option value="img/apple.gif">사과</option>
+         </select>
+      </td>
+      <td ><img  name="img1" src="img/banana.gif"></td>
+  </tr>
+</table>
+</body>
+</html>

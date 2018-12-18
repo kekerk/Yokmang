@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이벤트 해제하기</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* 		$("h1").click(function(){//click가 bind됨.
+		 alert($(this).html());
+		 $(this).html("CLICK");
+		 //클릭된 h1태그만 click 이벤트 등록 제거.
+		 $(this).unbind("click");
+		 }) */
+		//문제 : 마우스가 h1태그에 있을 때 검정바탕에 흰 글씨로 변환
+		//			마우스가 h1태그에서 나갈 때 흰바탕에 검정글씨로 변환하기.
+		$("h1").hover(function() {
+			$(this).css({
+				"background" : "black",
+				"color" : "white"
+			});
+		}, function() {
+			$(this).css({
+				"background" : "white",
+				"color" : "black"
+			});
+			$(this).unbind("mouseenter");
+		})
+	})
+</script>
+</head>
+<body>
+	<h1>Header_0</h1>
+	<h1>Header_1</h1>
+	<h1>Header_2</h1>
+	<h1>Header_3</h1>
+	<h1>Header_4</h1>
+</body>
+</html>

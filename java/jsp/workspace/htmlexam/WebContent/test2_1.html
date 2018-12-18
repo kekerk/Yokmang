@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>윈도우 색상 변경하기</title>
+</head>
+<body>
+		<!-- 
+	document.bgColor : 문서의 배경색 지정.
+	this.value : select 태그에서 선택된 값.
+	selected ="selected" : 속석의 정보. 속성값. 초기 설정값 지정.
+	속성 : 태그의 기능 설정.
+	
+	HTML,CSS : 대소문자 구분 안함.
+	JavaScript : 대소문자 구분함.
+ -->
+	원하는 색상을 고르세요<p>
+	<select onchange="document.bgColor = this.value">
+		<!-- "document.bgColor = this.value"는 자바스크립트   -->
+		<option selected = "selected"> white </option>
+		<option> blue </option>
+		<option> red </option>
+		<option> green </option>
+		<option> #ffee00 </option>
+		<option> #12ff21 </option>
+		<option> #1234fe </option>
+		<option> black </option>
+	</select>
+</body>
+</html>

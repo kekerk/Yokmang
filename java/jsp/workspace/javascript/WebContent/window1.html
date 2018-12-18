@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--  /WebContent/window1.html
+		window 객체가 지원하는 3개의 대화창
+		alert  : 확인 메세지.
+		prompt : 입력창.
+		confirm: 실행, 취소
+
+ -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="f">
+<!--
+	this.form.echo.value : <input type ="text" name="echo" value="">
+	this : radio 버튼.(form의 하위 객체.)
+	this.form : radio 버튼이 속한 form 객체.
+	alert(...) : 전달(return) 값이 없다.
+	confirm(...) : true/false
+	prompt(...) : 입력된 값/ 공백.
+ -->
+	<input type = "radio" name="dbox"
+	 onclick ="this.form.echo.value=alert('alert 메서드 호출')"> alert 메세지 창<br>
+	<input type = "radio" name="dbox"
+	 onclick ="this.form.echo.value=confirm('confirm 메서드 호출')"> confirm 메세지 창<br>
+	<input type = "radio" name="dbox"
+	 onclick ="this.form.echo.value=prompt('prompt 메서드 호출')"> prompt 메세지 창<br>
+	<p> 메세지 창의 리턴값
+	<input type="text" name="echo">
+</form>
+</body>
+</html>

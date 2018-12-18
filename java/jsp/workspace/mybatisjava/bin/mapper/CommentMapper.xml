@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+	<select id="count" resultType="int"> <!--  id의 원래 값은 comment.count -->
+		select count(*) from comment
+	</select>
+	<select id="list" resultType="Comment"> 
+		select * from comment
+	</select>
+	<select id="insert" parameterType="Comment"> 
+		insert into comment values (#{no},#{id},#{content},#{regdate})
+	</select>
+	<select id="update" parameterType="Comment"> 
+		update comment set id=#{id}, content=#{content}, regdate=#{regdate} where no=#{no}
+	</select>
+	<select id="selectone" resultType="Comment" parameterType="int"> 
+		select * from comment where no=#{no}
+	</select>
+	<select id="selectoneid" resultType="Comment" parameterType="String"> 
+		select * from comment where id=#{a}
+	</select>
+	<select id="selectid" resultType="Comment" parameterType="String"> 
+		select * from comment where id like '%${value}%'
+	</select>
+	<!-- 
+		#{a} : 값+문자열
+		${a} : 값
+	 -->
+	<select id="selectcolumn" resultType="Comment" parameterType="map"> 
+		select * from comment where ${column} = #{value}
+	</select>
+</mapper>

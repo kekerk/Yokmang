@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Text to Speech 연습</title>
+<script type="text/javascript">
+	var msg = new SpeechSynthesisUtterance(); //TTS 기능 저장 객체 생성.(TTS)
+	function setlang(t) {
+		msg.lang = t; // TTS 객체에 언어 설정
+	}
+	function ttsTest() { 
+		msg.text = intext.value; //textarea에 있는 글 포함.
+		speechSynthesis.speak(msg);
+	}
+</script>
+</head>
+<body>
+<textarea rows="10" cols="100" id="intext">안녕하세요</textarea>
+<input type="button" onclick="setlang('ko_KR'); ttsTest()" value="읽기"><br>
+</body>
+</html>

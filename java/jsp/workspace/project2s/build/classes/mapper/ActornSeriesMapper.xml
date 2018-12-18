@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ActornSeriesMapper">
+<select id="selectactor" resultType="Actor" parameterType="map">
+	select * from actor 
+	<if test="no != null">
+		where no = #{no}
+	</if>
+	<if test="startrow != null and limit != null">
+		 limit #{startrow},#{limit}
+	</if> 
+</select>
+<select id="selectseries" resultType="Series" parameterType="map">
+	select * from series
+	<if test="seriesno != null">
+		where seriesno = #{seriesno}
+	</if>
+	<if test="startrow != null and limit != null">
+		 limit #{startrow},#{limit}
+	</if>
+</select>
+<select id="actorCount" resultType="int" parameterType="map">
+	select count(*) from actor
+	
+</select>
+<select id="seriesCount" resultType="int" parameterType="map">
+	select count(*) from series
+	
+</select>
+<select id="sort" resultType="Series" parameterType="map">
+	select * from series order by seriescnt desc, seriesno asc
+</select>
+</mapper>

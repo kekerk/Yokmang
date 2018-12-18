@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>초를 시간으로 환산하기</title>
+<style type="text/css">
+.rnum {
+	width : 70px;
+	text-align : right;
+}
+</style>
+<script type="text/javascript">
+function ch() {
+	Sec = parseInt(document.getElementById('sec').value);
+	 h= Math.floor(Sec/3600);
+	 m=Math.floor((Sec%3600)/60);
+	 s= Math.floor(Sec%60);
+	 // document.getElementById('hour').value = Math.floor(Sec/3600);
+	 // document.getElementById('minute').value = Math.floor((Sec%3600)/60);
+	 // document.getElementById('second').value = Math.floor(Sec%60);
+	hour.value = h;
+	minute.value = m;
+	second.value = s;
+}
+</script>
+</head>
+<body>
+초 : <input type="text" id="sec">
+	  <input type="button" value="시분초로 환산" onclick="ch()"> <br>
+	  <input type="text" id="hour" class="rnum">시간
+	  <input type="text" id="minute" class="rnum">분
+	  <input type="text" id="second" class="rnum">초
+	  
+</body>
+</html>

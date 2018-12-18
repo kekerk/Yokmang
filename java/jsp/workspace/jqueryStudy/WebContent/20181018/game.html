@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>그림 맞추기 게임</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+var level = 4;
+$(document).ready(function() {
+	shuffle();
+	editHtml();
+	game();
+})
+function shuffle(){
+	model = [
+	"S_1.jpg","S_1.jpg","S_2.jpg","S_2.jpg",
+	"S_3.jpg","S_3.jpg","S_4.jpg","S_4.jpg",
+	"S_5.jpg","S_5.jpg","S_6.jpg","S_6.jpg",
+	"S_7.jpg","S_7.jpg","S_8.jpg","S_8.jpg",
+	"S_9.jpg","S_9.jpg","S_10.jpg","S_10.jpg",
+	"pic00.png","pic00.png","pic01.png","pic01.png",
+	"pic02.png","pic02.png","pic03.png","pic03.png",
+	"pic04.png","pic04.png","pic05.png","pic05.png",
+	"pic06.png","pic06.png","pic07.png","pic07.png"
+	];
+	cnt = level*level; //그림의 갯수
+	for(var i=0;i<1000;i++){
+		var ran = Math.floor(Math.random()*cnt);
+		var tmp = model[0];
+		model[0] = model[ran];
+		model[ran] = tmp;
+	}
+}
+function editHtml(){
+	var board = "<table>";
+	for(var i=0;i<cnt;i++){
+		if((i%level)==0) board += "<tr>";
+		board += "<td><img class='pic' src='./img/"+model[i]+"' value='"+model[i]+"' width='100' height='100'></td>";
+		if((i%level)==(level-1)) board += "</tr>";
+	}
+	$("#board").html(board+"</table>");
+}
+function game() {
+	var pic= $(".pic");
+	setTimeout(function() {
+		for(var c=0;c<pic.length;c++){
+			$(".pic").eq(c).css("opacity","0.01");
+		}
+	},2000);
+	var total=0;
+	var count=0;
+	var success=0;
+	var $onePic =null;
+	var $twoPic =null;
+	$(".pic").click(function() {
+		if(!$(this).is(".diepic")) { // class = diepic : 클릭되지 않은 사진?
+			total++;
+			$(this).css("opacity",1);
+			count++;
+			if(count ==1){
+				$onePic = $(this);
+				$tr =$(this).parant().parent(); //이미지가 속한 tr 객체.
+				onex = $tr.children().index($(this).parent()); // 이미지 td 위치.
+				oney = $tr.parent().children().index($tr);//이미지 tr 위치
+			}else if(count ==2){
+				$twoPic = $(this);
+				$tr =$(this).parant().parent(); //이미지가 속한 tr 객체.
+				twox = $tr.children().index($(this).parent()); // 이미지 td 위치.
+				twoy = $tr.parent().children().index($tr);//이미지 tr 위치
+				if($onePic.attr("src")==$twoPic.attr("src") && (onex != twox || oney != twoy)){ //첫번째 사진과 두번째 사진이 같을 경우.
+					success++;
+					if(cnt/2 == success){ //4x4 일시 8개의 그림을 맞추어야 함.
+						alert((total/2)+"번 만에 성공. 게임 종료")
+						setTimeout(function(){
+							if(confirm("게임을 계속 하시겠습니까?"));
+								 location.reload();
+						},2000)
+					}
+					$onePic.addClass("diepic");
+					$twoPic.addClass("diepic");
+					$onePic.disable = true;
+					$twoPic.disable = true;
+				}else{ //첫번째 사진과 두번째 사진이 다를 경우.
+					setTimeout(function(){
+						$onePic.css("opacity","0.01");
+						$twoPic.css("opacity","0.01");
+					},50);
+				}
+				count = 0;
+			}else{
+				alert("프로그램 오류 발생");
+			}
+		}
+	})
+}
+function gamestart(sel){
+	level = parseInt(sel.value);
+	shuffle();
+	editHtml();
+	game();
+}
+</script>
+<style type="text/css">
+ table,td {border:1px solid gray;}
+ table{border-collapse: collapse;}
+</style>
+</head>
+<body>
+<select id="level" onchange="gamestart(this)">
+	<option value="2">2x2</option>
+	<option value="4" selected="selected">4x4</option>
+	<option value="6">6x6</option>
+</select>
+<div id="board"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 설정부분. bean 설정을 위한 xml 파일 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       						   http://www.springframework.org/schema/beans/spring-beans.xsd">
+       						   
+	<bean id="test1" class="test1.Test1">
+		<property name="hello" value="안녕하세요"/>	
+	</bean>       						   
+	<bean id="test2" class="test1.Test2"/>
+</beans>

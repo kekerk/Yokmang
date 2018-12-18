@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>게시글 검색</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function loadboard(){
+		var params = "column="+document.getElementById("column").value+"&find="+document.getElementById("find").value;
+		sendRequest("board.jsp",params,boardList,"POST");
+	}
+	function boardList(){
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				alert(httpRequest.responseText);
+				document.getElementById("list").innerHTML = httpRequest.responseText;
+			}else{
+				alert("서버오류:"+httpRequest.status);				
+			}
+		}
+	}
+</script>
+</head>
+<body>검색어:
+<select id="column">
+	<option value="name">글쓴이</option>
+	<option value="title">제목</option>
+	<option value="content">내용</option>
+</select>
+<input type="text" id="find">
+<input type="button" value="검색" onclick="loadboard()">
+	<br>
+	<div id="list"></div>
+</body>
+</html>

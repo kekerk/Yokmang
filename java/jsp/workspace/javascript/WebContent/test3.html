@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--  test3.html (math1.html 복사) -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getInt() { // 호출되면 실행이 됨.
+		return Math.floor(Math.random()*1000)%10;
+	}
+	var op = new Array("+","-","*","/"); // 1
+	function getOp(){ // 호출되면 실행이 됨.
+		return op[Math.floor(Math.random()*4)];
+	}
+	/*
+	   문제의 수 입력 받아서 tcnt 변수에 저장하고.
+	  맞은 정답수를 cnt가 입력.
+	  최종적으로 입력한 수식의 수와 정답수를 출력.
+	  10개 중 8개를 맞췄습니다.
+	*/
+	var tcnt = prompt("풀 문제의 수를 입력하세요",0);
+	cnt = 0;
+	for(i=1;i<=tcnt;i++){
+	str = getInt()+getOp()+getInt(); //4
+	ans = prompt(str+"= 식의 정답을 입력하세요",0); // 내가 정답이라고 입력한 값.
+	res = eval(str); //실제 정답.
+	if(res != ans) { // 내가 적은 답이 정답이 아닐 경우.
+		document.write("입력한 값은 "+ans+" 입니다.");
+		document.write("<font color='red' size='5'> 틀렸습니다.</font>");
+		document.write(str + "="+res+" 입니다.<br>");
+	}else{
+		document.write("<font color='blue' size='7'> 정답입니다. </font><br>");
+		cnt++;
+	}
+	}
+	document.write("총 문제 개수는 "+tcnt+"개이고 맞힌 개수는 "+cnt+"개입니다.")
+</script>
+</body>
+</html>

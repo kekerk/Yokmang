@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>div 태그로 box 그리기</title>
+<style type="text/css">
+	div {
+		background-color:#cccccc;
+		border: solid;
+		border-width: thick;
+		width : 300pt;
+		height: 100pt;
+		display : inline-block;
+		margin : 10px;
+	}
+	
+	#lime {
+		position : relative;
+		top : 0px;
+		left : 150px;
+		background-color : lime;
+	}
+	body {
+		display:inline-flex;
+	}
+</style>
+</head>
+<body>
+<div>
+	박스그리기: div 태그의 배경색을 cccccc로 변경<br>
+	테두리를 실선으로 두껍게 설정하기<br>
+	박스의 간격을 10px;로 설정하기<br>
+	박스의 크기: 200*100pt;로 가로로 배치하기
+	
+
+</div>
+<div id="lime">	
+	박스그리기:div의 설정에 배경색만 lime로 변경하기<br>
+	
+</div>
+</body>
+</html>

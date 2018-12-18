@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- /WebContent/book.html -->
+<meta charset="EUC-KR">
+<title>책정보 보기</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function loadBooks() {
+		sendRequest("book.xml", null, booklist, "GET");
+	}
+	function booklist() {
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				list();
+			} else {
+				alert("서버오류: " + httpRequest.status);
+			}
+		}
+	}
+	function list() {
+		var xmlDoc = httpRequest.responseXML;
+		var books = xmlDoc.getElementsByTagName("book");
+		var titles = xmlDoc.getElementsByTagName("title");
+		var authors = xmlDoc.getElementsByTagName("author");
+		var prices = xmlDoc.getElementsByTagName("price");
+		var text = "<br><table border='1'>"
+		+"<tr><th>제목</th><th>저자</th><th>가격</th></tr>";
+		for (var i = 0; i < books.length; i++) {
+			text+="<tr><td>"+ titles[i].childNodes.item(0).nodeValue + "</td>";
+			text +="<td>"+ authors[i].childNodes.item(0).nodeValue + "</td>";
+			text +="<td>"+ prices[i].childNodes.item(0).nodeValue + "</td></tr>";
+		}
+		text += "<tr><td colspan='3' align='right'>책개수:"+books.length+"</td></tr></table>";
+		document.getElementById("result").innerHTML = text;
+	}
+	
+	//화면이 준비되면 function 실행
+	window.onload = function() {
+		loadBooks();
+	}
+</script>
+</head>
+<body>
+	책정보를 화면에 table형태로 출력하기
+	<div id="result"></div>
+</body>
+</html>

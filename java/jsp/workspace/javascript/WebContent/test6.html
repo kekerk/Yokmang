@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>약수 구하기</title>
+<script type="text/javascript">
+function bs() {
+	nums = document.getElementById("num").value;
+	var html = "<table><caption>"+nums+"의 약수</caption><tr>";
+	for(i=1;i<=parseInt(nums);i++){
+			if((parseInt(nums)%i)==0){
+				html += "<td>"+i+"</td>";
+			}
+		}
+	html +="</tr></table>";
+	ban.innerHTML = html;
+}
+</script>
+</head>
+<body>
+<input type="text" id="num">
+<input type="button" value="약수구하기" onclick=bs()>
+<div  id="ban"></div>
+</body>
+</html> 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>마우스 이벤트 예제</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("th").hover(function(){
+			//$(this) : 마우스 커서를 가지고 있는 th 태그
+			//$(this).parent() : tr 태그
+			//$(this).parent().children() : th태그 들. 5개의 th태그
+			//$(this).parent().children().index(this) : 5개의 th태그들 중 this의 index값. 내가 상위태그의 위치 리턴.
+			select = $(this).parent().children().index(this)+1;
+			$(this).addClass("hover"); //this의 색상 변경
+			$("td:nth-child(5n"+select+")").addClass("hover"); //td의 색상 변경
+		},function(){
+			$(this).removeClass("hover");
+			$("td:nth-child(5n"+select+")").removeClass("hover");
+		})
+	})
+</script>
+<style type="text/css">
+	.hover{background:green; color:yellow;}
+	.reverse{background:blue; color:white;}
+</style>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse;">
+<tr><th>이름</th><th>혈액형</th><th>지역</th><th>성별</th></tr>
+<tr><td>강민</td><td>A</td><td>서울</td><td>남</td></tr>
+<tr><td>구지연</td><td>B</td><td>인천</td><td>여</td></tr>
+<tr><td>구자철</td><td>O</td><td>대구</td><td>남</td></tr>
+<tr><td>김선화</td><td>AB</td><td>제주</td><td>여</td></tr>
+<tr><td>진기주</td><td>A</td><td>경주</td><td>여</td></tr>
+</table>
+</body>
+</html>

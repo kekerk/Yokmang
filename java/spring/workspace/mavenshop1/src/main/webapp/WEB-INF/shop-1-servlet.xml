@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop.xsd
+	    http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>/index.shop=indexController
+			/detail.shop=detailController</value><!-- index.shop 요청시, indexController로 보냄 -->
+		</property>
+	</bean>
+	<bean id="indexController" class="controller.IndexController" p:shopService-ref="shopService" />
+	<bean id="detailController" class="controller.DetailController" p:shopService-ref="shopService" />
+	<bean id="shopService" class="logic.ShopServiceImpl" p:itemDao-ref="itemDao" />
+	<bean id="itemDao" class="dao.ItemDaoImpl" p:dataSource-ref="dataSource" />
+	<!-- 리스너가 dataSource를 주입해준다. applicationContext.xml에서 가져옴 -->
+	
+<!-- 
+	view 결정자
+		View 위치를 지정
+		/WEB-INF/view/index.jsp
+ -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/view/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--  /WebContent/link1.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>hyperlink 문자 꾸미기</title>
+<style type = "text/css">
+/* td,body : td 태그 이거나 body 태그 둘 다*/
+/* body td : body 태그 하위의 태그 중 td 태그를 선택*/
+/* td.c    : td 태그 중 클래스 속성값이 c인 태그 선택*/
+/* td#i    : td 태그 중 id 속성값이 i인 태그 선택*/
+/* 하나의 태그가 여러개의 class 속성을 가질 수 있다 */
+	td,body {
+	margin : 0;
+	color : #330099;
+	font-size : 10pt;
+	padding-left : 20px;
+	line-height : 19pt;
+	}
+	a {
+	color : #6634DD;
+	font-size : 20pt;
+	text-decoration : none; /* 밑줄 사라짐 */
+	}
+	/* hover   : a 태그에 마우스가 들어오는 이벤트
+	   link    : a 태그의 기본 설정
+	   visited : 방문 이후
+	   active  : 클릭하고 있는 상태
+	*/
+	a:hover {
+		color : white;
+		background-color : black;
+	}
+	/* 방문 이후 */
+	a:visited {
+		color : red;
+		backgroud-color : blue;
+	}
+	/* a태그 중 클래스 속성이 default인 경우 설정 */
+	a.default:link {
+		color : blue;
+		text-decoration : underline;
+	}
+	a.default:visited {
+		color : purple;
+		text-decoration : underline;
+	}
+	a.default:active {
+		color : lime;
+		text-decoration : underline;
+	}
+	/* 태그 중 class 속성이 color 인 태그를 마우스가 영역 내에 들어오면 white로 변경하기. */
+	a.color : link {
+		color : red;
+		text-decoration : underline;
+	}
+	a.color : visited {
+		color : blue;
+		text-decoration : underline;
+	}
+	a.color : active {
+		color : white;
+		text-decoration : underline;
+	}
+	a.color:hover {
+		color : white;
+		background-color : black;
+	}
+	.a1{ color : white; }
+	.b1{ background-color : blue;}
+	
+</style>
+</head>
+<body>
+<table width="500" align="center" height="100" border="0">
+	<tr valign="top"><td>마우스를 올리면.....<hr><b>기본값</b><br>
+	<a href ="http://www.naver.com" class="default">네이버</a>
+	<a href ="http://www.daum.net" class="default">다음</a>
+	<a href ="http://www.google.com" class="default">구글</a>
+	<hr>
+	<a href ="http://www.naver.com" class="color">네이버</a>
+	<a href ="http://www.daum.net" class="color">다음</a>
+	<a href ="http://www.google.com" class="color">구글</a>
+	</td>
+	</tr>
+</table>
+<h1 class="a1 b1">class 속성 a1, b1</h1>
+<h3 class= "b1"> class 속성 b1</h3>
+<h3 class= "a1"> class 속성 a1</h3>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<properties>
+	<property>
+	<address>서울시 종로구 가회동 100번지</address><!--  태그 안의 값은 객체 -->
+	<price>50000000</price>
+	<comments>조용하고 좋은 이웃</comments>
+	</property>
+	<property>
+	<address>서울시 강남구 역삼동 100번지</address>
+	<price>150000000</price>
+	<comments>학교,백화점 등 편의 시설 입점</comments>
+	</property>
+	<property>
+	<address>경주시 황성동 럭키아파트</address>
+	<price>450000000</price>
+	<comments>살기 좋은 도시</comments>
+	</property>
+	<property>
+	<address>경기도 부천시 역곡동 100번지</address>
+	<price>30000000</price>
+	<comments>교통 원활</comments>
+	</property>
+</properties>

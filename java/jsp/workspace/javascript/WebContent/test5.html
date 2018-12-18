@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>합계구하기</title>
+<script type="text/javascript">
+function Sum(){
+		var sumtag = document.getElementById("num");
+		var s = parseInt(sumtag.value);
+		Sum1 = 0;
+		Sum2 = 0;
+		Sum3 = 0;
+		for(i=1;i<=s;i++){
+			Sum1+=i;
+		}
+		sum1.value = Sum1;
+		
+		for(i=1;i<=s;i+=2){
+			Sum2+=i;
+		}
+		sum2.value = Sum2;
+		
+		for(i=0;i<=s;i+=2){
+			Sum3+=i;
+		}
+		sum3.value = Sum3;
+	
+}
+</script>
+</head>
+<body>
+숫자 : <input type="text" id="num">까지의 <input type="button" value="합" onclick=Sum()><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;합 : <input type="text" id="sum1"><br>
+홀수합: <input type="text" id="sum2"><br>
+짝수합: <input type="text" id="sum3"><br>
+</body>
+</html>

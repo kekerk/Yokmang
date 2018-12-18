@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>두 숫자 더하기</title>
+<style type="text/css">
+	input {text-align : right;}
+</style>
+<script type="text/javascript">
+	function add(f1){ // type="text" : 입력되는 숫자는 문자열 형.
+	//num1,num2의 값이 없는 경우 alert창으로 숫자를 입력하세요. 메세지 출력.
+	if(f1.num1.value.length==0 || f1.num2.value.length==0){
+		alert('숫자를 입력하세요');
+		f1.ret.value='';
+		f1.num1.focus();
+		return false;
+	}else if(isNaN(f1.num1.value)){ //숫자가 아닌 다른 문자가 들어오면 실행.
+		alert('숫자만 입력가능');
+		f1.num1.value='';
+		f1.num1.focus();
+		return false;
+	}else if(isNaN(f1.num2.value)){
+		alert('숫자만 입력가능');
+		f1.num2.value='';
+		f1.num2.focus();
+		return false;
+	}
+//	f.ret.value = parseInt(f.num1.value) + parseInt(f.num2.value);
+	// eval 함수 : 문자열을 수식으로 변경하는 함수.
+	f1.ret.value = eval(f1.num1.value + "+" + f1.num2.value);
+	return false;
+	}
+	function sub(f2){
+	f2.ret.value = eval(f2.num1.value + "-" + f2.num2.value);
+	return false;
+	}
+</script>
+</head>
+<body>
+<form name="f1" onsubmit="return add(this)">
+<input type="text" name="num1" size="5">+
+<input type="text" name="num2" size="5">
+<input type="submit" value = "=">
+<input type="text" name="ret" size="5">
+</form><br>
+<form name="f2" onsubmit="return sub(this)">
+<input type="text" name="num1" size="5">-
+<input type="text" name="num2" size="5">
+<input type="submit" value = "=">
+<input type="text" name="ret" size="5">
+</form><br>
+
+</body>
+</html>

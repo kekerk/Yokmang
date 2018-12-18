@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>select 태그 : 도시 선택하기</title>
+<script type="text/javascript">
+   sies= new Array(
+			  new Option("서울시"),
+			  new Option("경기도"),
+			  new Option("충청남도"),
+			 new Option("부산시"));
+	
+	gues = new Array();
+	gues[0] = new Array();
+	gues[1] = new Array();
+	gues[2] = new Array();
+	gues[3] = new Array();
+
+	gues[0][0] = new Option("강남구");
+	gues[0][1] = new Option("서초구");
+	gues[0][2] = new Option("구로구");
+	gues[0][3] = new Option("금천구");
+	
+	gues[1][0] = new Option("이천시");
+	gues[1][1] = new Option("광주시");
+	gues[1][2] = new Option("부천시");
+	gues[1][3] = new Option("안양시");
+	
+	gues[2][0] = new Option("천안시");
+	gues[2][1] = new Option("유성시");
+	gues[2][2] = new Option("아산시");
+	gues[2][3] = new Option("논산시");
+	
+	gues[3][0] = new Option("강서구");
+	gues[3][1] = new Option("해운대구");
+	gues[3][2] = new Option("영도구");
+	gues[3][3] = new Option("동구");
+	// window가 처음 로드될 때 실행.
+	window.onload = function(){ //서울시로 기본으로 나옴
+		for(i=0;i<sies.length;i++){
+			document.f.si.options[i] = sies[i];
+	
+		}
+		for(i=0;i<gues[0].length;i++){
+			document.f.gu.options[i] = gues[0][i];
+		}
+	}
+	function selectgu(f){
+		// f.si.selectedIndex : 현재 선택된 메뉴 값
+		for(i=0;i<gues[f.si.selectedIndex].length;i++){
+			document.f.gu.options[i] = gues[f.si.selectedIndex][i];
+		}
+	}
+</script>
+</head>
+<body>
+<form name="f">
+<!--  onchange : select, checkbox 태그에서 값이 변경될 때 발생되는 이벤트 -->
+	<select name="si"  onchange="selectgu(this.form)"></select>
+	<select name="gu"></select>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--  /Webcontent/xmljson.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+	function doJson(){
+		new ajax.xhr.Request("jsondata2.jsp",null,jsonResult,"GET"); 
+	}
+	
+	function doXml(){
+		new ajax.xhr.Request("xmldata2.xml",null,xmlResult,"GET"); 
+	}
+	
+	function xmlResult(xhr){
+		if(xhr.readyState == 4){
+			if(xhr.status == 200){
+				xmlControl(xhr);
+			}
+		}
+	}
+	
+	function jsonResult(xhr){ //xhr : ajax 객체
+		if(xhr.readyState == 4){
+			if(xhr.status == 200){
+				jsonControl(xhr);
+			}
+		}
+	}
+	
+	function jsonControl(xhr){
+		filedata = xhr.responseText;
+		editdata = "<br><table border='1'>";
+		editdata += "<caption>주택가격</caption>";
+		editdata += "<tr><th>주소</th><th>가격</th><th>특징</th></tr>";
+		var evaldata = eval("("+filedata+")");
+		for(var i=0;i<evaldata.properties.length;i++){
+			editdata += "<tr><td>"+evaldata.properties[i].address+"</td>";
+			editdata += "<td>"+evaldata.properties[i].price+"</td>";
+			editdata += "<td>"+evaldata.properties[i].comments+"</td></tr>";
+		}
+		editdata += "</table>";
+		resultHeader.innerHTML = "<h2>JSON 주택 정보</h2>";
+		resultBody.innerHTML = editdata;
+		
+	}
+	
+	function xmlControl(xhr){
+		var xmlDoc = xhr.responseXML;
+		//properties : 배열값
+		var properties = xmlDoc.getElementsByTagName("property");
+		var addresses = xmlDoc.getElementsByTagName("address");
+		var prices = xmlDoc.getElementsByTagName("price");
+		var comment = xmlDoc.getElementsByTagName("comments");
+		editdata = "<br><table border='1'>";
+		editdata += "<caption>주택가격</caption>";
+		editdata += "<tr><th>주소</th><th>가격</th><th>특징</th></tr>";
+		for(var i=0;i<properties.length;i++){
+			editdata += "<tr><td>"+addresses[i].childNodes.item(0).nodeValue+"</td>";
+			editdata += "<td>"+prices[i].childNodes.item(0).nodeValue+"</td>";
+			editdata += "<td>"+comment[i].childNodes.item(0).nodeValue+"</td></tr>";
+		}
+		editdata += "</table>";
+		resultHeader.innerHTML = "<h2>JSON 주택 정보</h2>";
+		resultBody.innerHTML = editdata;
+		
+	}
+</script>
+</head>
+<body>
+<h1>주택 매매 정보</h1>
+<input type="button" value="JSON 검색" onclick="doJson()">
+<input type="button" value="XML 검색" onclick="doXml()">
+<div id="resultHeader"></div>
+<div id="resultBody"></div>
+</body>
+</html>

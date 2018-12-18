@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Jquery event 예제</title>
+<style type="text/css">
+.reverse {
+	background: black;
+	color: white;
+}
+</style>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function() {
+			//alert($(this).html());
+			//h1 태그들을 숨기고 보이기 : toggle
+			/*
+				slow / fast : 속도
+				swing/linear : 속도를 처음, 끝은 느리고, 중간은 빠르게 / 속도를 일정하게
+			*/
+			$("h1").toggle("slow", "swing", function() {
+				$(this).html(function(index,html) {
+					return "*" + html;
+				})
+			})
+		})
+		//bind 함수 : 이벤트 등록
+		//$("h1").bind("click",function() {}): h1 태그에 click  이벤트 등록. function이 이벤트 핸들러임.
+		/*  	$("h1").bind("click",function() { 
+		 $(this).html(function(index,html){
+		 return html + "+";	
+		 })
+		 })  */
+		$("h1").click(function() {
+			$(this).html(function(index, html) {
+				return html + "+";
+			})
+		})
+		/* 		$("h1").bind({
+		 mouseenter : function() { // mouseenter : h1 태그에 마우스커서가 들어올 때.
+		 $(this).addClass("reverse"); // 마우스커서가 위치한 h1 태그에 class="reverse" 속성 등록
+		 },
+		 mouseleave : function() { // mouseleave : h1 태그에서 마우스커서가 나갈 때.
+		 $(this).removeClass("reverse");
+		 }
+		 }) */
+		$("h1").hover(function() {
+			$(this).addClass("reverse");
+		}, function() {
+			$(this).removeClass("reverse");
+		})
+		
+		$("#test1").html("<br>안녕하세요<br>홍길동님")
+		$("#test2").text("<br>안녕하세요<br>홍길동님\")
+	})
+</script>
+</head>
+<body>
+	<button>Toggle 메서드 연습</button>
+	<h1>Header_0</h1>
+	<h1>Header_1</h1>
+	<h1>Header_2</h1>
+	<hr>
+	<h1 id="test1"></h1>
+	<h1 id="test2"></h1>
+</body>
+</html>

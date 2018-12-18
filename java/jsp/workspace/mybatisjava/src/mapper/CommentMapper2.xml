@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment2">
+<select id="selectByCondition" resultType="Comment" parameterType="map">
+	select * from comment
+	<where>
+	<if test="no != null">
+	no=#{no}
+	</if>
+	<if test="id != null">
+	id like '%${id}%'
+	</if>
+	<if test="content != null">
+	content like binary '%${content}%'
+	</if>
+	</where>
+</select>
+<select id="selectByChoose" resultType="Comment" parameterType="hashmap">
+	select * from comment
+	<choose>
+		<when test="no !=null and id != null">
+		where no = #{no} and id like '%${id}%'
+		</when>
+		<when test="no !=null">
+		where no = #{no} 
+		</when>
+		<when test="id != null">
+		where id like '%${id}%'
+		</when>
+	</choose>
+</select>
+<select id="selectByTrim" resultType="Comment" parameterType="map">
+	select * from comment
+	<trim prefix="where" prefixOverrides="AND | OR">
+		<if test="no != null">and no=#{no}</if>
+		<if test="id != null">and id like  '%${no}%'</if>
+	</trim>	
+</select>
+<!--  1. no = 1 and id=test
+			select * from comment where no=1 and id like '%test%'
+		2. no = 1
+			select * from comment where no=1 
+		3. id=test
+			select * from comment where  id like '%test%'
+ -->
+ <select id="selectByForEach" resultType="Comment" parameterType="map">
+ 	select * from comment
+ 	<if test="ids != null">
+ 		where ${column} in
+ 		<foreach collection="ids" item="n" separator="," index="i" open="(" close=")">
+ 			#{n}
+ 		</foreach>
+ 	</if>
+   </select>
+</mapper>

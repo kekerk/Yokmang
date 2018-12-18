@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--  javascript 프로젝트 생성. /WebContent/script1.html 
+	자바 스크립트 내장 객체 : 5가지 윈도우 기준으로 하위 멤버로 생각하면 됨.
+	1. window   : 최상단 객체. 객체명 생략 가능함.
+	2. document : 문서 객체. 태그들의 정보를 저장함.
+				            window.document
+	3. location : 현재 브라우저의 url 정보를 저장.
+				  href 속성에 페이지를 설정하면 설정된 페이지로 이동함.
+		          ex) window.location.herf = "a.html"
+    4. history  : 브라우저의 url 설정 과정을 저장.
+    5. navigator: 브라우저 자체의 정보를 저장.
+-->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>JavaScript</title>
+</head>
+<body>
+	<!--  onmouseover : 영역에 마우스를 갖다대는 이벤트
+						뒤에는 javascript 언어가 온다.				
+	 -->
+<a href = "http://www.naver.com"
+    onmouseover="document.bgColor='black'"
+	onmouseout ="window.document.bgColor = 'red'">
+	마우스를 여기로 이동하면 어떤 색이 나올까요</a><br><br>
+<a href = "javascript.window.alert('마우스 클릭 금지')"
+   onmouseover ='alert("마우스 접근 금지")'>
+   여기는 마우스 접근하지 마세요. 마우스 접근시 alter창이 뜹니다.
+</a><br><br>
+<!--  마우스가 영역에 들어오면 
+	  open() 함수 : 새로운 창을 띄우기
+	  open('http://www.naver.com')
+ -->
+ <a href = "#" 
+ 	onmouseover = "window.document.open('http://www.naver.com','','')"
+ 	target="_blank">새창에 네이버페이지 띄우기</a>
+</body>
+</html>

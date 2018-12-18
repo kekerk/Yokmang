@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--  /WebContent/jsonview.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>JSON 파일 연습</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function rcvData(){
+		sendRequest("jsondata.jsp",null,resultData,"GET");
+	}
+	function resultData(){
+		if(httpRequest.readyState==4){
+			if(httpRequest.status==200){
+				//본 구문
+				alert(httpRequest.responseText);
+				jsonView(httpRequest.responseText); //객체 전달.
+			}else{
+				alert("서버오류: " + httpRequest.status);
+			}
+		}
+	}
+	
+	function jsonView(filedata){
+	 	editdata ="<br><table border='1'>"
+	                 + "<tr><td>우편번호</td><td>읍면동</td><td>주소</td></tr>";
+	    var evaldata = eval("("+filedata+")");
+	 	for(var i=0; i<evaldata.ZIP.length; i++){
+	 		var code = evaldata.ZIP[i].zipcode;
+	 		var dong = evaldata.ZIP[i].dong;
+	 		var addr = evaldata.ZIP[i].addr;
+	 		editdata += "<tr><td>"+code+"</td><td>"+dong+"</td><td>"+addr+"</td></tr>";
+	 	}
+	 	editdata += "</table>";
+	 	document.getElementById("result").innerHTML = editdata;
+	}
+</script>
+</head>
+<body>
+<h2>JSON 데이터 보기</h2>
+<input type="button" value="json 우편 번호" onclick="rcvData()"><br>
+<div id="result"></div>
+</body>
+</html>

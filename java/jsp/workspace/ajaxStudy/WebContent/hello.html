@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ajax 예제 1</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function helloToServer() {
+		var params = "name=" + document.f.name.value;
+		sendRequest("hello.jsp", params, helloFromServer, "POST");
+	}
+	// callback 함수 
+	/*
+	    httpRequest.readyState == 0 : Ajax 객체 생성 상태 	--> httpRequest = getXmlHttpRequest();
+	    httpRequest.readyState == 1 : Ajax 객체 open 상태
+	    httpRequest.readyState == 2 : Ajax 객체 send 상태. server 응답 전
+	    httpRequest.readyState == 3 : Ajax 객체 send 상태. server 일부 응답 상태
+	    httpRequest.readyState == 4 : Ajax 객체 send 상태. server 응답 완료 상태
+	    
+	    httpRequest.status = 200 : 정상 종료
+	    httpRequest.status = 404 : 서버페이지 없음
+	    httpRequest.status = 500 : 서버페이지에서 오류 발생함
+	    
+	    httpRequest.responseText : 서버가 전달한 메세지. 소스 정보
+	*/
+	function helloFromServer() {
+		if (httpRequest.readyState == 4) { // 서버 응답 완료 시 
+			if (httpRequest.status == 200) { // 서버 정상 종료 시
+				alert(httpRequest.responseText); //jsp 페이지의 소스 정보 표시
+				document.getElementById("hello").innerHTML = httpRequest.responseText; //hello id 안에 HTML 구문 실행.
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="f">
+		<input type="text" name="name"> <input type="button" value="인사하기" onclick="helloToServer()">
+		<div id="hello"></div>
+	</form>
+</body>
+</html>

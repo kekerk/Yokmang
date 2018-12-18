@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="student">
+<select id="select" resultType="Student" parameterType="hashmap">
+select * from student
+	<choose>
+	<when test="grade != null">
+		where grade = #{grade}
+	</when>
+		<when test="major1!= null">
+		where  major1 = #{major1}
+	</when>
+		<when test="studno != null">
+		where studno = #{studno}
+	</when>
+		<when test="jumin != null">
+		where 
+	</when>
+	</choose>
+</select>
+<select id="selectByTrim" resultType="Student" parameterType="map">
+select * from student
+	<trim prefix="where" prefixOverrides="AND">
+		<if test="grade != null">and grade=#{grade}</if>
+		<if test=" jumin != null">and  substr(jumin,7,1) = #{jumin}</if>
+		<if test=" major1 != null">and  major1 = #{major1}</if>
+	</trim>	
+</select>
+ <select id="selectByforeach" resultType="Student" parameterType="map">
+ 	select * from student
+ 	<if test="lists != null">
+ 		where ${column} in
+ 		<foreach collection="lists" item="n" separator="," index="i" open="(" close=")">
+ 			#{n}
+ 		</foreach>
+ 	</if>
+   </select>
+</mapper>

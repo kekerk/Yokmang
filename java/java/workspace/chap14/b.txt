@@ -1,0 +1,5 @@
+##save
+#Mon Aug 20 16:07:29 KST 2018
+age=20
+name=\uD64D\uAE38\uB3D9
+subject=\uCEF4\uD4E8\uD130\uACF5\uD559

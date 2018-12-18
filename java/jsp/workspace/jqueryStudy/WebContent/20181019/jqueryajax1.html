@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--  WebContent/20181019/jquertajax1.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Jquery에서 Ajax 사용하기</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			//$.ajax : ajax 기능 사용 준비
+			$.ajax("ajax1-1.jsp", {
+				success : function(data) { //callback 함수.
+					// data : 서버에서 전송한 데이터
+					// append() : 내용에 추가.
+					$("body").append(data);
+				}
+			})
+		})
+		$("#btn2").click(function() {
+			$.ajax({
+				url : "ajax1-2.jsp",
+				type : "POST",
+				data : "name=홍길동&age=20",
+//				data : {name:"홍길동",age:20},
+				success : function(data) {
+					$("body").append(data);
+				}
+			})
+		})
+		$("#btn1remove").click(function() {
+			// ("h1").get(-1) : $("h1:last"), 가장 뒤쪽.
+			$("h1").get(-1).remove();
+		})
+		$("#btn2remove").click(function() {
+			$("h2").get(-1).remove();
+		})
+	})
+</script>
+</head>
+<body>
+	<button id="btn1">ajax1-1.jsp</button>
+	<button id="btn1remove">ajax1-1.jsp에서 추가된 내용 삭제</button>
+	<button id="btn2">ajax1-2.jsp</button>
+	<button id="btn2remove">ajax1-2.jsp에서 추가된 내용 삭제</button>
+</body>
+</html>

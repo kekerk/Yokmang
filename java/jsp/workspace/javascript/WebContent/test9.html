@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<!--  조금 더 살펴보기 -->
+<title>성적입력</title>
+<style type="text/css">
+table {
+	width : 100%;
+	border-collapse : collapse;
+}
+th,td {
+	border : 3px solid #bcbcbc;
+	text-align: center;
+	padding: 8px;
+}
+
+th {
+	background-color : #4AAF50;
+	color : white;
+}
+td {
+	background-color : #F2F2F2;
+}
+</style>
+<script type="text/javascript">
+var ranks= [] ;
+var totals = [];
+/*------------------------------------------------------------------*/
+ 
+ /*
+	addEventListener : Load라는 이벤트 감시. 
+									윈도우가 처음 로드될 때 
+									window.onload(function() {...})와 같음.
+*/
+window.addEventListener("load",function() {
+	// bResult : 추가 버튼 객체.
+	var bResult = document.getElementById("b-result");
+	// bResult.onclick : 추가 버튼 클릭 시 메서드 실행.
+	bResult.onclick = function() {
+	// 입력된 값
+	var name = document.getElementById("Name").value;
+	var kor = document.getElementById("Kor").value;
+	var eng = document.getElementById("Eng").value;
+	var  math = document.getElementById("Math").value; 
+	insertRow(name,kor,eng,math);
+	}
+});
+/*------------------------------------------------------------------*/
+// name,kor,eng,math : 입력된 값들
+function insertRow(name,kor,eng,math){
+	// add-table : table 객체
+	var addTable = document.getElementById("add-table");
+	// addTable.rows : <tr> 갯수.
+	var rowCount = addTable.rows.length; 
+	var row = addTable.insertRow(rowCount); //  새로운 레코드 추가.
+	var total = parseInt(kor) +  parseInt(eng) +  parseInt(math);
+	var avg =total/3;
+	if(rowCount >=2 ){  //한 건 이상이 등록된 경우
+		rank(total,rowCount);
+	}
+	//row.insertCell(0) : <td>를 의미.
+	row.insertCell(0).innerText = name;
+	row.insertCell(1).innerText = kor;
+	row.insertCell(2).innerText = eng;
+	row.insertCell(3).innerText = math;
+	row.insertCell(4).innerText = total;
+	row.insertCell(5).innerText = avg.toFixed(2); // 소숫점 2자리.
+	if(rowCount == 1) {
+		row.insertCell(6).innerText = 1;
+	} else {
+		// 새로 추가된 등수 입력.
+		row.insertCell(6).innerText = ranks[rowCount-1];
+	}
+	row.insertCell(7).innerHTML= "<input type='button' value='Delete' onclick='deleteRow(this)'>"; //this = button
+}
+/*------------------------------------------------------------------*/
+   function rank(total, rowCount){
+	var addTable = document.getElementById("add-table"); // 테이블 객체 가져옴.
+	for( var i=0; i<rowCount;i++){
+		ranks[i] = 1; // ranks[0] = 1 , ranks[1] = 1 
+	}
+	for(var i=0; i<rowCount;i++){
+		if(i==(rowCount-1)){ // i가 1이면 
+			totals[i] = total; // 위의 rank의 부분 값
+		} else {
+			// 위의 rank 부분의 값을 totals[i]에 집어넣는다.
+			totals[i] = addTable.rows[i+1].cells[4].outerText;  //cells[4] = total
+		}
+	}
+	// 등수 계산
+	//  ranks[0] : 첫번째의 등수
+	//  ranks[1] : 두번째의 등수
+	for (var x=0; x <totals.length; x++){
+		for (var y=0; y < totals.length; y++){
+			if(x==y) continue;
+			if(parseInt(totals[x]) < parseInt(totals[y])) {
+				++ranks[x]; // 총점이 적을 경우 등수 추가.
+			}
+		}
+    }
+	for(var i=0;i<rowCount-1;i++){
+		addTable.rows[i+1].cells[6].innerText = ranks[i];
+	}
+}
+/* ----------------------------------------------------------------*/
+function delRank(delIndex){
+	var addTable = document.getElementById("add-table");
+	var rowCount = addTable.rows.length;
+	ranks.splice(0,1); //배열에서 0번 인덱스 1개를 분리시켜 가져옴.
+	totals.splice(delIndex-1,1) // 삭제된 레코드의 total값을 제거.
+	// 등수 계산
+	for(var i=0;i<ranks.length;i++){
+		ranks[i] =1 ;
+	}
+	for (var x=0; x <totals.length; x++){
+		for (var y=0; y < totals.length; y++){
+			if(x==y) continue;
+			if(parseInt(totals[x]) < parseInt(totals[y])) {
+				++ranks[x];
+			}
+		}
+    }
+	for(var i=0;i<ranks.length;i++){
+		addTable.rows[i+1].cells[6].innerText = ranks[i];
+	}
+}
+/* ----------------------------------------------------------------*/
+function deleteRow(obj){
+	// obj : button 객체.
+	// obj.parentNode : td 객체
+	// obj.parentNode.parentNode : tr 객체
+	// obj.parentNode.parentNode.rowIndex : tr의 index
+	var delIndex = obj.parentNode.parentNode.rowIndex;
+	var addTable = document.getElementById("add-table");
+	addTable.deleteRow(delIndex); // .deleteRow(delIndex) : tr 레코드 삭제.
+	var rowCount = addTable.rows.length;
+	delRank(delIndex);
+}
+</script>
+</head>
+<body>
+<div><form>
+이름<input type="text" id="Name">
+국어<input type="text" id="Kor">
+영어<input type="text" id="Eng">
+수학<input type="text" id="Math">
+<button  type="button" id="b-result" onclick="input()"> 추가 </button>
+</form>
+</div>
+<div>
+	<table id="add-table">
+		<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th> 
+				<th>총점</th><th>평균</th><th>등수</th><th>&nbsp;</th></tr><!--  0번째 row -->
+	</table>
+</div>
+</body>
+</html>

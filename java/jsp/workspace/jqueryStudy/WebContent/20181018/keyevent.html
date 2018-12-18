@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>글자수 세기</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var num1 = $("h1").text();
+	/*
+		키 이벤트
+		keydown() : 키가 눌러질 때
+		keypress() : 키를 누르고 있을 때
+		keyup() : 키에서 손을 뗄 때, 키가 올라올 때
+	*/
+	$("textarea").keydown(function() {
+		$("#ha").css("font-size","200pt");
+		$("#ha").html("하!");
+	})
+	
+	
+	$("textarea").keyup(function(){
+		var num2 = num1 - $("textarea").val().length;
+		if($("textarea").val().length > 200){
+			$("h1").html(num2);
+			$("h1").css("color","red");
+			$("textarea").css("color","red");
+		}else{
+			$("h1").html(num2);
+			$("h1").css("color","black");
+			$("textarea").css("color","black");
+		}
+		$("#ha").html(" ");
+	})
+})
+</script>
+</head>
+<body>
+<p>글쓰기</p><h1>200</h1>
+<textarea cols="70" rows="10"></textarea>
+<div id="ha"></div>
+</body>
+</html>

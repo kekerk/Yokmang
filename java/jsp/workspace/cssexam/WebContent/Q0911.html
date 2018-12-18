@@ -1,0 +1,127 @@
+<!DOCTYPE html><!--  Q0911.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>MT 계획표</title>
+<style type="text/css">
+  p#title {font-size: 30pt; 
+           text-align: center;}
+  p#place {font-size: 20pt; 
+           text-align: right;}
+/* 테이블의 크기 : 60%
+           테이블셀의 크기 고정
+           테두리의 크기 : 1pt;
+           테두리 선은 실선으로
+           셀간 간격은 없도록, 내용은 가운더 정렬하기
+ */
+  table,td {
+  width : 60%; /* 테이블의 크기 : 60% */
+  border : 1pt solid; /*테두리 1pt 실선 */
+  text-align : center; /*내용 가운데 정렬*/
+  table-layout : fixed; /*테이블셀의 크기 고정*/
+  border-collapse: collapse; /*셀간 간격 없도록 지정*/
+  }
+ /* td태그중에 class속성값이 td1인 태그를 배경색을 노랑색으로
+        글자를 굵게 출력 */
+  .td1 {
+		background-color : yellow;
+   }
+/*
+ div 지정
+  배경색 : #D5D5D5
+  크기는 60%, 높이는 70pt
+ 
+ div 안의 font 지정. 
+  글자 체는 궁서체로
+  글자는 굵게, 위치는 상대 위치 바로 아래; 
+*/
+#notice {
+	background-color : #d5d5d5;/*div 배경색 */
+	font-family : "궁서체";/*글자 체*/
+	font-weight : bold; /*글자 굵게 */
+	width: 60%; /*div 크기 */
+	height :70pt;/*div 높이*/
+	
+}
+ul {
+ 	margin : 0; 
+ 	padding-top: 8pt;
+	display : block;
+}
+.a1 {
+	position : fixed;
+	background-color : black;
+	right : 0px;
+	bottom : 0px;
+	width : 100%;
+	height : 45px;
+	text-align:center;
+	color : white;
+}
+</style>
+</head>
+<body>
+<p id="title">MT 계획표</p>
+<p id="place">장소 : 강촌</p>
+<table>
+  <tr height="10">
+     <td class="td1">&nbsp;</td>
+     <td class="td1">첫째날</td>
+     <td class="td1">둘째날</td>
+     <td class="td1">세째날</td>
+  </tr>
+  <tr><td class="td2">08:00~09:00</td>
+    <td rowspan="4">출발</td>
+    <td id="lunch">아침식사</td>
+    <td id="lunch">아침식사</td>
+  </tr>
+  <tr><td class="td2">09:00~10:00</td>
+    <td rowspan="3">자유시간</td>
+    <td rowspan="2">롤링페이퍼</td>
+  </tr>
+  <tr><td class="td2">10:00~11:00</td></tr>
+  <tr><td class="td2">11:00~12:00</td>
+     <td>짐정리</td></tr>
+  <tr><td class="td2">12:00~13:00</td>
+     <td colspan="3" id="lunch">점심 식사</td>
+  </tr>
+  <tr><td class="td2">13:00~14:00</td>
+     <td>방배정</td>
+     <td rowspan="4">조별체육대회</td>
+     <td rowspan="10">집으로</td>
+  </tr>
+  <tr><td class="td2">14:00~15:00</td>
+     <td rowspan="3">장기자랑준비</td></tr>
+  <tr><td class="td2">15:00~16:00</td></tr>   
+  <tr><td class="td2">16:00~17:00</td></tr>   
+  <tr><td class="td2">17:00~18:00</td>
+     <td id="lunch">저녁 식사</td><td id="lunch">저녁 식사</td>
+  </tr>   
+  <tr><td class="td2">18:00~19:00</td>
+     <td rowspan="2">조별퀴즈대회</td>
+     <td rowspan="4">캠프화이어</td>
+  </tr>
+  <tr><td class="td2">19:00~20:00</td></tr>
+  <tr><td class="td2">20:00~21:00</td>
+      <td rowspan="2">조별 장기 자랑</td>
+  </tr>
+  <tr><td class="td2">21:00~22:00</td></tr>
+  <tr><td class="td2">22:00~</td>
+      <td>취침</td><td>취침</td>
+  </tr>
+</table>
+
+<div id="notice">
+   <ul>
+      <li>출발시간은 반드시 지킬것</li>
+      <li>조별 준비물은 반드시 지킬것</li>
+      <li>추운 날씨를 대비해 여벌옷 준비</li>
+      <li>그외 문의 사항은 각 조장에게 할것</li>
+   </ul>
+</div>
+
+<div class="a1">
+ 다들 집에 조심히 가라.
+</div>
+</body>
+</html>

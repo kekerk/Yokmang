@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>문제 : </title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//	$("#title").css({"background":"green","color":"yellow"})
+	$(".content").hover(function(){
+		//class 속성 값이 header가 아닌 경우 css 설정하기 : 조건문 is 함수 사용하기.
+		if(!$(this).is("#title")){
+		$(this).css({"background":"blue","color":"white"})
+		}
+	},function(){
+		if(!$(this).is("#title")){
+		$(this).css({"background":"white","color":"black"})
+		}
+	})
+})
+</script>
+<style type="text/css">
+#title{
+	background:green; color:yellow;
+}
+</style>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse;">
+<tr id="title"><th>이름</th><th>혈액형</th><th>지역</th><th>성별</th></tr>
+<tr class="content"><td>강민</td><td>A</td><td>서울</td><td>남</td></tr>
+<tr class="content"><td>구지연</td><td>B</td><td>인천</td><td>여</td></tr>
+<tr class="content"><td>구자철</td><td>O</td><td>대구</td><td>남</td></tr>
+<tr class="content"><td>김선화</td><td>AB</td><td>제주</td><td>여</td></tr>
+<tr class="content"><td>진기주</td><td>A</td><td>경주</td><td>여</td></tr>
+</table>
+</body>
+</html>

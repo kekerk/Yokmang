@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="EUC-KR">
+<title>글자 잡기 게임</title>
+<script type="text/javascript">
+	function nextRandomInteger(limit){
+		return Math.round(Math.random()*limit); //Math.round : 반올림. 0~700 사이
+	}
+	function randomSpeen(maxSpeed){
+		return Math.random()*maxSpeed - Math.random()*maxSpeed;
+	}
+	var canvasWidth = 700; // 움직이는 범위 지정 : 가로범위
+	var canvasHeight = 500; // 움직이는 범위 지정 : 세로범위
+	var total = 10; // 글자수 10개
+	function MovingText() { // 객체의 생성자. javaScript에서 객체 생성 방법
+		this.x = nextRandomInteger(canvasWidth);
+		this.y = nextRandomInteger(canvasHeight);
+		this.vX = randomSpeen(5);
+		this.vY = randomSpeen(5);
+		//this.body = document.createElement("h1"); : h1태그 객체 생성.
+		this.body = document.createElement("h1");
+		this.body.innerHTML = "A"; // this.body : <h1>삐약</h1>
+		this.body.setAttribute("style","background-color:red");
+		this.body.style.position = "absolute"; // absolute : 절대 경로
+		var text = this.body; // 지역변수 선언
+		// h1태그에 클릭이벤트 등록
+		this.body.onclick = function() { //이벤트 핸들러
+			--total;
+			alert(total);
+			text.innerHTML = "꿱";
+		}
+		document.body.appendChild(this.body); //h1태그를 집어넣어라.
+	}
+	// MovingText 객체의 멤버 메서드 정의. 5개의 멤버 메서드를 가지고 있다.
+	// MovingText
+	MovingText.prototype.move = function() { // 튕김 효과.
+		if(this.x < 0 || this.x > canvasWidth) {this.vX *= -1;} 
+		if(this.y < 0 || this.y > canvasHeight) {this.vY *= -1;} 
+		this.x += this.vX;
+		this.y += this.vY;
+		this.body.style.left = this.x + "px"; //최종적으로 h1태그의 style에서 글씨의 위치의 지속적인 변경.
+		this.body.style.top = this.y + "px";
+	}
+	//  window.onload : 윈도우 창이 시작할 때 발생되는 이벤트
+	// 처음 시작할 때 한번.
+/* ************************************************************************************************* */
+	window.onload = function() {
+		document.bgColor="green";
+		var movingtexts = []; // 배열 표시.
+		for(var i=0;i<10;i++){
+			movingtexts.push(new MovingText()); // 10개의 랜덤위치 h1태그("O") 생성.
+		}
+		// setInterval(function(),시간(밀리초단위)) : 해당 시간 간격으로 이 함수를 자동호출.
+		var game = setInterval(function() {
+			for(var i in movingtexts){
+				if(total < 4){
+					alert("game over");
+					clearInterval(game); // game 함수 호출 stop
+					return;
+				}
+				movingtexts[i].move(); //h1태그("O")가 계속 움직임.
+			}
+		},1000/60); // 1/60 초
+		
+	}
+</script>
+</head>
+<body>
+<!--  document.body -->
+</body>
+</html>

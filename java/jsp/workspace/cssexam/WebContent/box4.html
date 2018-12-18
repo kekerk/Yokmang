@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--  /WebContent/box4.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>position과 z-index</title>
+<style type="text/css">
+ /*
+    position
+    1. static : 0,0부터 차례대로 배치. z-index 사용 불가.
+    			left,right,top,bottom 사용 불가.
+    2. relative : 앞의 요소로부터 상대 좌표. left,right,top,bottom 사용 가능.
+    3. fixed : 브라우저의 절대 좌표로 이동. 스크롤 시에도 화면 고정.
+    4. absolute : 절대좌표. document의 절대 좌표. 스크롤 시 같이 이동.
+    
+    z-index : static을 제외하고 사용이 가능하다.
+              숫자가 크면 위쪽에 배치되도록 설정.
+              
+ */
+ div {
+ width:200pt; height:200pt;
+ }
+ div:hover{
+ color : #fff;
+ background-color:black;
+ }
+ .p1 {
+ 	z-index : 1;
+ 	position : fixed; top:10pt; right:0pt;
+ 	background-color : green;
+ 	cursor: crosshair;
+ }
+  .p2 {
+ 	z-index : 4;
+ 	position : relative; top:10pt; left:10pt;
+ 	background-color : gold;
+ 	cursor: pointer;
+ }
+ .p3 {
+ 	z-index : 0;
+ 	position : absolute; bottom:10pt; right:100pt;
+ 	background-color : purple;
+ 	cursor: move;
+ }
+  .p4 {
+ 	z-index : 3;
+ 	position : absolute; top:150pt; right:150pt;
+ 	background-color : pink;
+ 	cursor: wait;
+ }
+</style>
+</head>
+<body>
+<div class="p1"> 위치 지정하기</div>
+<div class="p2"> 위치 지정하기</div>
+<div class="p3"> 위치 지정하기</div>
+<div class="p4"> 위치 지정하기</div>
+
+</body>
+</html>

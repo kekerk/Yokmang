@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>xml 연습</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#xmlbtn").click(function() {
+		$.ajax("ajaxxml.xml",{
+			success : function(data){
+				// $(data).find("person") : person 태그 전부를 배열 전달
+				// each : 반복
+				$(data).find("person").each(function() {
+					// $(this) : 현재 each의 대상인 person 태그 객체.
+					var name = "<li>" + $(this).find("name").text() + "</li>";
+					var gender = "<li>" + $(this).find("gender").text() + "</li>";
+					var part = "<li>" + $(this).find("part").text() + "</li>";
+					$("#message").append("<ul>"+name+gender+part+"</ul>");
+				})
+			}
+		})
+	})
+	$("#xmlbtn2").click(function() {
+		$.ajax("address.xml",{
+			success : function(data){
+				state(data,"north");
+				state(data,"south");
+				state(data,"east");
+				state(data,"west");
+			}
+		})
+	})
+	
+	function state(data,four){
+		$(data).find(four).each(function(){
+			$("#address").append("<ul>");
+			$(this).find("state").each(function(){
+				$("#address").append("<li>" + $(this).text() + "</li>");
+			})
+			$("#address").append("</ul><br>");
+		})
+	}
+})
+</script>
+</head>
+<body>
+<button id="xmlbtn">XML 연습</button>
+<button id="xmlbtn2">address XML 연습</button>
+<div id="message"></div>
+<div id="address"></div>
+</body>
+</html>

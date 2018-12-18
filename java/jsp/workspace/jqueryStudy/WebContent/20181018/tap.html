@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>탭 설정하기</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".books").hide();
+		$(".movies").hide();
+		$(".musics").hide();
+
+		$('a').hover(function() {
+			$(this).addClass("rightselect");
+			$(this).parent().addClass("leftselect");
+		}, function() {
+			$(this).removeClass("rightselect");
+			$(this).parent().removeClass("leftselect");
+		});
+		$("#booksbutton").click(function() {
+			/*
+				a 태그 클릭하면 설정된 페이지로 이동. -> 기본 이벤트(기능)
+				event.preventDefault() : 기본 기능 무시함.
+			*/
+			event.preventDefault(); // href (페이지 이동)의 기능을 없앰. 
+			$(".books").show();
+			$(".movies").hide();
+			$(".musics").hide();
+		})
+		$("#moviebutton").click(function() {
+			event.preventDefault();
+			$(".books").hide();
+			$(".movies").show();
+			$(".musics").hide();
+		})
+		$("#musicbutton").click(function() {
+			event.preventDefault();
+			$(".books").hide();
+			$(".movies").hide();
+			$(".musics").show();
+		})
+	})
+</script>
+<style type="text/css">
+.buttons {
+	width: 80px;
+	float: left;
+	text-align: center;
+	background-color: #000000;
+}
+
+a {
+	display: block;
+	padding: 3px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.rightselect {
+	display: block;
+	padding: 3px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.leftselect {
+	width: 80px;
+	float: left;
+	text-align: center;
+	background-color: #00ff00;
+}
+</style>
+</head>
+<body>
+	<span class="buttons"><a href="" id="booksbutton">Books</a></span> <!-- href="" : 계속 자기 자신 호출 -->
+	<span class="buttons"><a href="" id="moviebutton">Movies</a></span>
+	<span class="buttons"><a href="" id="musicbutton">Musics</a></span>
+	<br><br>
+	<p class="books">책설명, 책목록 등 표시 ...........</p>
+	<p class="movies">영화설명, 영화목록 등 표시 ...........</p>
+	<p class="musics">노래설명, 노래목록 등 표시 ...........</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+	1. cssexam : Dynamic Web project 생성.
+	2. WebContent/list1.html
+ -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>태그 선택자 연습</title>
+<!-- 
+	태그명 {속성: 속성값; ...}
+	.class속성값{속성:속성값;...}
+	#id속성값{속성:속성값;...}
+ -->
+<style type = "text/css">
+/*	li {list-style-type : decimal;} */
+	h2 {font-size: 20px; color:orange;}
+	p  {color:blue;}
+	/*
+	 .l1 : 태그 중 class의 속성의 값이 l1인 모든 태그. 
+	*/
+	.l1{list-style-type : none;}
+	.l2{list-style-type : decimal;}
+	.l3{list-style-type : lower-greek;}
+	.l4{list-style-image : url("icon.png"); color : pink;} /* 이미지 파일 등은 WebContent 폴더 안에 있어야 함 */
+	.h3{color : blue;}
+	/* #h3:태그 중 id 속성의 값이 h3인 태그를 선택. id 속성은 유일성을 가짐 */
+	#h3{color : yellow;}
+</style>
+</head>
+<body>
+	<ul><li>항목1</li><li>항목2</li><li>항목3</li></ul>
+	<ul class="l1"><li>항목1</li><li>항목2</li><li>항목3</li></ul>
+	<ul class="l2"><li>항목1</li><li>항목2</li><li>항목3</li></ul>
+	<ul class="l3"><li>항목1</li><li>항목2</li><li>항목3</li></ul>
+	<ul class="l4"><li>항목1</li><li>항목2</li><li>항목3</li></ul>
+	<h1 class="l4">CSS</h1>
+	<h2>웹 문서의 디자인과 내용을 분리합니다.</h2>
+	<p>웹 표준에 의한 웹 문서는 디자인과 내용이 분리되어 있습니다.</p>
+	<p style="color:green">내용은 HTML을 이용해 구성하고, 디자인은 CSS를 이용해 꾸미는 것입니다.</p>
+	<!-- class 속성이 h3인 태그의 글자색을 blue로 변경하기. -->
+	<h3>H3 태그를 이용하여 ID 속성 선택하기</h3>
+	<h3 class="h3">H3 태그를 이용하여 ID 속성 선택하기</h3>
+	<h3 id="h3" class="h3">H3 태그를 이용하여 ID 속성 선택하기</h3>
+	<h3 id="h3">H3 태그를 이용하여 ID 속성 선택하기</h3>
+
+</body>
+</html>

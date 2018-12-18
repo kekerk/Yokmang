@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>바구니 갯수 구하기</title>
+<script type="text/javascript">
+	function calc(){
+		basketcnt.value  = Math.floor(apple.value/apb.value); // javascript에서 연산이 되면 소수점까지 표현된다.
+		if((apple.value%apb.value)!=0){
+			basketcnt.value++;
+		}
+		else{
+			return;
+		}
+	}
+</script>
+<!--  CDN 방식 : CSS 파일을 외부에서 설정. -->
+<link rel="stylesheet" 
+         href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<table class="w3-table-all">
+	<caption>바구니 수 계산하기</caption>
+	<tr>
+		<th class="w3-light-grey">바구니당 사과의 갯수</th>
+		<td><select id="apb" >
+		<option value="5">5개</option>
+		<option value="10">10개</option>
+		<option value="15">15개</option>
+		<option value="20">20개</option>
+		</select></td>
+	</tr>
+	<tr><td>사과의 갯수</td>
+			<td><input type="text" id="apple"></td></tr>  <!--  id는 유일하다는 표시로 쓰는 속성 -->
+	<tr>
+	<td colspan="2" align="right">
+	<input type="button " value="바구니수 계산하기"
+	   onclick ="calc(apple.value,apb.value)" class="w3-btn w3-block w3-teal">
+	</td>
+	</tr>
+	<tr><td>필요한 바구니수</td>
+			<td><input type="text" id="basketcnt"></td></tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

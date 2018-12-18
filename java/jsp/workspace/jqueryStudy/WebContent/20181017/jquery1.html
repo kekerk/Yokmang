@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Jquery 예제 1</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+// $(document).ready : 문서가 load 완료되는 시점
+$(document).ready(function() {
+	//$("h1,p") : h1태그와 p 태그의 글자색을 red로 설정
+	//$("h1 p") : h1태그 내부의 p 태그의 글자색을 red로 설정
+		$("h1,p").css("color","red");
+	// class 속성값이 item인 태그의 글자색을 오렌지 색으로 설정.
+		$(".item").css("color","orange");
+	// id 속성값이 target인 태그의 글자색을 blue 색으로 설정.
+		$("h1#target").css("color","blue");
+		$("p#target").css("color","green");
+})
+</script>
+</head>
+<body>
+<h1>Jquery1<p>Jquery1</p></h1>
+<h1 class="item">Jquery class 선택자</h1>
+<h1 class="item">Jquery class 선택자</h1>
+<h1 class="item">Jquery class 선택자</h1>
+<hr>
+<h1 id="target">Jquery id 선택자</h1>
+<p id="target">Jquery id 선택자</p>
+</body>
+</html>

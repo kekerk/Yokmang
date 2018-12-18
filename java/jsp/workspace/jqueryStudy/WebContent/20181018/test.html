@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- /WebContent/20181018/test1.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("th").hover(function() {
+			select = $(this).parent().children().index(this) + 1;
+			$(this).addClass("hover");
+			$("td:nth-child(3n" + select + ")").addClass("hover");
+		}, function() {
+			$(this).removeClass("hover");
+			$("td:nth-child(3n" + select + ")").removeClass("hover");
+		})
+
+		$("th").click(function() {
+			select = $(this).parent().children().index(this) + 1;
+			$(this).hide();
+			$("td:nth-child(3n" + select + ")").hide();
+		})
+	})
+</script>
+<style type="text/css">
+.hover {
+	color: blue;
+	background-color: cyan
+}
+</style>
+</head>
+<body>
+	<table border="1" style="border-collapse: collapse;">
+		<tr><th>학번</th>	<th>이름</th>	    <th>점수</th></tr>
+		<tr>	<td>103</td>	<td>홍길동</td>	<td>85</td></tr>
+		<tr>	<td>102</td>	<td>김삿갓</td>	<td>90</td></tr>
+		<tr>	<td>101</td>	<td>이몽룡</td>	<td>87</td></tr>
+	</table>
+</body>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>캘린더 만들기</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript">
+	function show_cal(){
+	 var year = parseInt(y.value); // 년도
+	 var mon = parseInt(m.value); // 월
+	 // cal1 : 입력된 월의 첫째날
+	 cal1 = new Date(year,mon-1,1); // 0(1월) ~ 11(12월) 
+	 // cal2 : 입력된 월의 다음달의 첫째날
+	 cal2 = new Date(year,mon,1);
+	 // cal2.getTime() : 1970년 시작부터 cal2날짜까지의 밀리초 리턴
+	 // cal2 날짜에서 하루 빼기. : 입력된 달의 마지막 일자.
+	 cal2.setTime(cal2.getTime()-(1000*60*60*24));
+	 // cal1 : 월의 1일
+	 // cal2 : 월의 마지막 일
+	 dd = cal1.getDay(); // 요일 : 0(일) ~ 6(토)
+	 a = 0; //표시될 일자를 저장.
+	 // cc : 화면에 표시할 HTML 저장.
+	 cc = "<table class='w3-table-all'><caption>" + year+"년"+mon+"월</caption>";
+	 cc+="<tr class='w3-black'>";
+	 cc+="<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>";
+	 for(i=0;i<6;i++){ // 한달을 6주로 설정.
+		 cc+="<tr>";// 한주 열기
+		 for(j=0;j<7;j++){
+			 cc+="<td>"; // 하루 열기.
+			 if(j==0) cc+="<font color='red'>";   // 일요일
+			 if(j==6) cc+="<font color='blue'>"; // 토요일
+			 if(i==0){ // 첫주 1일 : 수(3)
+				 if(j>=dd)cc+= ++a;
+				 else  cc+= "&nbsp;";
+			 } else { // 둘째주부터.
+				 if(a < cal2.getDate()){  //cal2.getDate() : 마지말 일자. 
+					 cc += ++a;
+				 } else {
+					 cc += "&nbsp;";
+				 }
+			 }
+			 if (j==0 || j==6) cc+= "</font>";
+			 cc += "</td>"; //하루를 닫기.
+		 }
+		 cc += "</tr>"; // 한주 닫기.
+		 if (a>= cal2.getDate()) break;
+	 }
+	 cc += "</table>";	 
+	 // innerHTML : 내부 HTML 내용
+	 console.log(cc);
+	 document.getElementById("cal1").innerHTML = cc;
+	}
+</script>
+</head>
+<body>
+<select id="y">
+    <option>1991</option>
+	<option>2015</option>
+	<option>2016</option>
+	<option>2017</option>
+	<option>2018</option>
+	<option>2019</option>
+	<option>2020</option>
+</select>
+<select id="m">
+	<option value="1">1월</option>
+	<option value="2">2월</option>
+	<option value="3">3월</option>
+	<option value="4">4월</option>
+	<option value="5">5월</option>
+	<option value="6">6월</option>
+	<option value="7">7월</option>
+	<option value="8">8월</option>
+	<option value="9">9월</option>
+	<option value="10">10월</option>
+	<option value="11">11월</option>
+	<option value="12">12월</option>
+</select>
+<input type="button" value="달력보기" onclick="show_cal()" class="w3-button w3-white w3-border w3-border-red w3-round-large">
+<br><span id="cal1"></span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

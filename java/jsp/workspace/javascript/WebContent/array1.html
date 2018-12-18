@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>배열, 이미지 예제</title>
+<script type="text/javascript">
+ overimg = new Array("img/0_over.jpg","img/1_over.jpg","img/2_over.jpg","img/3_over.jpg");
+ /* ******************************************************************************************* */
+ outimg = new Array(4);
+ outimg[0] = new Image();
+ outimg[1] = new Image();
+ outimg[2] = new Image();
+ outimg[3] = new Image();
+ outimg[0].src = "img/0_out.jpg";
+ outimg[1].src = "img/1_out.jpg";
+ outimg[2].src = "img/2_out.jpg";
+ outimg[3].src = "img/3_out.jpg";
+ /* ******************************************************************************************* */
+ function mover(idx){  // onmouseover 인 경우 호출되는 함수.
+	 // document.images : 문서 중 img 태그들을 저장한 배열 객체.
+	 // formimg : 문서 중 img 태그들을 저장한 배열 객체.
+	 var formimg = document.images; 
+	 formimg[idx].src = overimg[idx];
+ }
+ function mout(idx){ // onmouseout 인 경우 호출되는 함수.
+	 document.images[idx].src = outimg[idx].src; 
+ }
+</script>
+</head>
+<body>
+<table>
+	<tr><td align="center">
+			<a href = "#" onmouseover="mover(0)" onmouseout="mout(0)">
+				<img name="m0" src="img/0_out.jpg"></a>
+			</td>
+	</tr>
+	<tr><td align="center">
+			<a href = "#" onmouseover="mover(1)" onmouseout="mout(1)">
+				<img name="m1" src="img/1_out.jpg"></a>
+			</td>
+	</tr>
+	<tr><td align="center">
+			<a href = "#" onmouseover="mover(2)" onmouseout="mout(2)">
+				<img name="m2" src="img/2_out.jpg"></a>
+			</td>
+	</tr>
+		<tr><td align="center">
+			<a href = "#" onmouseover="mover(2)" onmouseout="mout(3)">
+				<img name="m3" src="img/3_out.jpg"></a>
+			</td>
+	</tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

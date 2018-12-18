@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--  /WebContent/script2.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>로그인 페이지 생성</title>
+<script type="text/javascript"> // type="text/javascript"는 생략 가능.
+ //id,pw 입력되지 않으면 alert 창을 띄어 메세지 출력.
+ 	function checkinput(f) { // f는 form 객체를 의미함.
+	 //id가 입력되지 않은 경우
+	 if(f.id.value.length==0){ // f.id.value : 입력된 아이디 값.
+		 window.alert('아이디를 입력하세요');
+		 f.id.focus(); //id 입력창으로 cursor를 이동.
+		 return false; // action 페이지로 이동x
+	 }
+	 //pw가 입력되지 않은 경우
+	 if(f.pw.value.length==0){
+		 alert('패스워드를 입력하세요');
+		 f.pw.focus(); //pw 입력창으로 cursor를 이동.
+		 return false; // action 페이지로 이동x
+	 }
+	 //id 값이 hongkd, pw의 값이 1234인 경우는 '로그인 완료' alert 메세지 출력.
+	 //              아닌 경우는 '아이디 또는 비밀번호 오류' alert 메세지 출력.
+	 if(f.id.value=='hongkd' && f.pw.value=='1234'){
+		 alert('로그인 완료');
+		 
+		 f.id.focus();
+		 
+	 }
+	 if(f.id.value!='hongkd' || f.pw.value!='1234'){
+		alert('아이디 또는 비밀번호 오류');
+			if(f.id.value!='hongkd'){
+			 f.id.value='';
+			 f.id.focus();
+		 }
+		 else if(f.pw.value!='1234'){
+			 f.pw.value='';
+			 f.pw.focus();
+     	 }
+	 }
+	 return false;
+ }
+</script>
+</head>
+<body>
+<!--
+ form  태그 : 입력값들을  script2.html 페이지로 전달하는 단위 객체.
+ onsubmit : submit 버튼이 클릭되면 발생되는 이벤트
+ submit 버튼 : 클릭되면 해당 form 객체에 설정된 action 페이지로 
+              이동하도록 하는 기능.
+              => submit 버튼이 클릭되면 checkinput() 호출됨.
+              	 return 의미 : checkinput 함수의 결과가 false인 경우: 
+              	              이벤트 처리가 취소됨.
+              	 			  action 페이지로 이동되지 않음.
+              	 			  checkinput 함수의 결과가 true인 경우 : 
+              	 			  action 페이지로 이동됨.
+ -->
+ <!-- 
+ 	action="script2.html" : 이 속성이 입력안되는 경우 현재 페이지 재호출됨.(생략 가능)
+ 	method="post" : 파라미터 전달시 post 방식 지정
+ 					설정이 없으면 get 방식으로 지정됨.
+ 			post 전달 시 : url이 아니고 http 전문의 body 부분에 저장.
+ 						url에 보여지지 않음. 많은 파라미터 전달시 사용됨.
+  			get  전달 시 : url에 보임. 파라미터가 url에 표시되므로 보안에 취약함.
+  -->
+<form action="script2.html" name="f" method="post"
+onsubmit="return checkinput(this)"> <!-- this : form -->
+ 아이디 &nbsp;&nbsp;&nbsp;: <input type="text" name="id"><br>
+ 비밀번호 : <input type="password" name="pw"><br>
+ <input type="submit" value="로그인"> 
+</form>
+</body>
+</html>

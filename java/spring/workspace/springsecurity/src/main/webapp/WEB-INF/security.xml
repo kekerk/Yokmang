@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/security
+	   http://www.springframework.org/schema/security/spring-security.xsd">
+<security:http auto-config="true">
+	<security:intercept-url pattern="/item/create**" access="ROLE_ADMIN"/> <!--  access에 들어있는 권한을갖고있어야  -->
+	<security:intercept-url pattern="/item/edit**" access="ROLE_ADMIN"/>
+	<security:intercept-url pattern="/item/confirm**" access="ROLE_ADMIN"/>
+	<security:intercept-url pattern="/item/detail**" access="ROLE_USER,ROLE_ADMIN"/>
+	<security:intercept-url pattern="/item/search**" access="ROLE_USER"/>
+	<security:form-login login-page="/login.shop"
+						 authentication-failure-url="/login.shop?login_error=1"
+						 default-target-url="/item/list.shop"/>
+	<security:session-management> <!-- 최대 1개의 세션만 가능. 기접속 시 다른 브라우저에서 로그인 불가 -->
+		<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
+	</security:session-management>
+	<security:logout logout-url="/j_spring_security_logout" logout-success-url="/logout.shop" invalidate-session="true"/>
+</security:http>
+<security:authentication-manager>
+	<security:authentication-provider>
+		<security:password-encoder hash="sha"/>
+		<security:user-service> 
+			<security:user name="admin" password="248902131a732628aef6e2872827db10df7c07bf" authorities="ROLE_ADMIN, ROLE_USER"/> <!--  2개의 권한 -->
+			<security:user name="user" password="8eec7bc461808e0b8a28783d0bec1a3a22eb0821" authorities="ROLE_USER"/>
+		</security:user-service>
+	</security:authentication-provider>
+</security:authentication-manager>
+</beans>

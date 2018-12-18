@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--  /WebContent/table.html -->
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>CSS로 table 설정하기.</title>
+<style type="text/css">
+/* table의 테두리를 1px, 실선, 검정색 설정하기 */
+ table,td {
+ 		border : 1px solid black; 
+ 		border-collapse: collapse; /* 셀 간격 제거  */
+ 		
+ }
+ .t1 {
+ 	table-layout : fixed;
+ }
+ .t2 {
+ 	table-layout : auto; /* 기본값  */
+ 	border-collapse: separate; 
+ }
+</style>
+</head>
+<body>
+<table class="t1" width="300">
+	<tr><td>1행1열</td><td>1행2열</td><td>1행3열</td></tr>
+	<tr><td>2행1열</td><td>2행2열2행2열2행2열2행2열2행2열2행2열2행2열2행2열2행2열</td><td>2행3열</td></tr>
+	<tr><td>3행1열</td><td>3행2열</td><td>3행3열</td></tr>
+</table>
+<table class="t2" width="300">
+	<tr><td>1행1열</td><td>1행2열</td><td>1행3열</td></tr>
+	<tr><td>2행1열</td><td>2행2열2행2열2행2열2행2열2행2열2행2열2행2열2행2열2행2열</td><td>2행3열</td></tr>
+	<tr><td>3행1열</td><td>3행2열</td><td>3행3열</td></tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

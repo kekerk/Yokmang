@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>select 태그</title>
+</head>
+<!--  조립을 잘 해보자... -->
+<script type="text/javascript">
+		function nameprint(f){
+			// f : select 객체.
+			// f.value : 선택된 option 값.
+			change = prompt(f.value);
+			// change : prompt 창에 입력된 값이 저장.
+			f.options[f.selectedIndex] = new Option(change); 
+			// f.selectedIndex : 선택된 option의 index 값.
+			//new Option(change) 형태로 선택된 옵션(f.options[f.selectedIndex])에 저장된다.
+			f.value = change; //바뀐 값을 보여주기.
+			// select의 선택된 값을 입력된 데이터로 보여주기.
+		}
+</script>
+<body>
+<p>문제: 과일을 선택하면, 선택된 과일을 prompt 창으로 출력하기.</p>
+<p>prompt 창에서 다른 과일을 입력하면 선택된 과일을 입력된 과일 이름으로 변경하기. </p>
+<form name="f">
+	<select name="s" onchange="nameprint(this)"> <!--  this.form이 되면 form을 가리키게 된다. -->
+		<option>사과</option>
+		<option>배</option>
+		<option>감</option>
+		<option>딸기</option>
+	</select>
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<decorators defaultdir="/decorator">
+	<decorator name="main" page="decorator_project2.jsp">
+		<pattern>/model2/actornseries/*</pattern>
+		<pattern>/model2/comments/*</pattern>
+		<pattern>/model2/allboard/*</pattern>
+		<pattern>/model2/members/*</pattern>
+	</decorator>
+	<!--  layout 제외시키기 -->
+	<excludes>
+	<pattern>/model2/members/repassform*</pattern>
+	<pattern>/model2/actornseries/slides*</pattern>
+	 </excludes>
+</decorators>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 설정 부분 --><!--  의존되는 객체를 주입할 appCtx.xml파일 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="memberDao" class="spring.MemberDao"></bean><!-- bean 객체 -->
+<!-- 
+	spring.MemberRegisterService 의 memberDao와
+	spring.ChangePasswordService 의 memberDao는 하나의 객체(같은 것)
+	하나의 memberDao 객체가 계속 움직인다.
+ -->
+	<bean id="memberRegSvc" class="spring.MemberRegisterService"> 
+		<constructor-arg ref="memberDao"/> <!--memberDao 객체가 6번째 줄에 의해 주입  -->
+	</bean>
+	<bean id="changePwdSvc" class="spring.ChangePasswordService">
+		<constructor-arg ref="memberDao"/> <!--memberDao 객체가 6번째 줄에 의해 주입  -->
+	</bean>
+	<bean id="exitSvc" class="spring.exitService">
+		<constructor-arg ref="memberDao"/> <!--memberDao 객체가 6번째 줄에 의해 주입  -->
+	</bean>
+</beans>

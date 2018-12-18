@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<decorators defaultdir="/decorator">
+	<decorator name="hello" page="hello_decorator.jsp">
+		<pattern>/model2/hello*</pattern>
+	</decorator>
+	<decorator name="main" page="decorator_ch1.jsp">
+		<pattern>/model2/member/*</pattern>
+		<pattern>/model2/board/*</pattern>
+	</decorator>
+	<!--  layout 제외시키기 -->
+	<excludes>
+	<pattern>/model2/member/memberimg*</pattern>
+	 </excludes>
+</decorators>

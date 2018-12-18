@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>새로운 창 열고 닫기</title>
+<script type="text/javascript">
+	function open_win(){
+		// var : open_win() 함수 내에서 사용되는 지역 변수로 저장됨.
+		// 			var이 없는 경우는 전역변수 된다.
+		 nw  = window.open('basket1.html',"new","width=500,height=400,scrollbar=yes,menubar=yes");
+		/*
+			open(url,name,option)
+				url : 새로운 창에 호출될 페이지 지정
+				name : window 이름
+				option : 창의 크기, 모양 설정.
+		*/
+	}
+	function close_win(){
+		nw.close();
+	}
+</script>
+</head>
+<body>
+<a href="javascript:open_win()">새창 열기</a>
+<a href="javascript:close_win()">새창 닫기</a>
+
+</body>
+</html>

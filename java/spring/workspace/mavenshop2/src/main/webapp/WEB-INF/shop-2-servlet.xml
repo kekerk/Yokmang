@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop.xsd
+	    http://www.springframework.org/schema/contexqkt
+	    http://www.springframework.org/schema/context/spring-context.xsd">
+	    <!--  URL 정보와 Controller 객체를 연결 -->
+	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> <!--  객체화  -->
+		<property name="mappings">
+			<value>
+			/userEntry.shop=userEntryController
+			/login.shop=loginController
+			</value>
+		</property>
+	</bean>
+	<bean id="userEntryController" class="controller.UserEntryController" 
+		p:shopService-ref="shopService" 
+		p:userValidator-ref="userValidator" />
+	<bean id="loginController" class="controller.LoginController" 
+		p:shopService-ref="shopService" 
+		p:loginValidator-ref="loginValidator" />
+	<bean id="userValidator" class="util.UserValidator" />
+	<bean id="loginValidator" class="util.LoginValidator" />
+	<bean id="shopService" class="logic.ShopServiceImpl" p:userDao-ref="userDao" />
+	<bean id="userDao" class="dao.UserDaoImpl" p:dataSource-ref="dataSource" />
+<!-- 
+messages.properties 파일을 검색하기전에 지역코드 파일을 먼저 검색함.
+	1. messages_ko_KR.properties 검색 : 언어에 맞도록 코드 설정한 messages이름의 여러 언어 파일이 있을 수 있기 때문에.
+	2. 1번의 파일이 없으면 messages.properties 파일을 검색함
+ -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- view단을 결정해주는 것 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/view/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+</beans>

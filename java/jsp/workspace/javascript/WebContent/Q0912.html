@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이벤트 연습</title>
+<script type="text/javascript">
+	function check1(f){
+		if(f.value.length>=4){
+			alert('경고 경고');
+			f.value='';
+			f.focus();
+			return false;
+		}
+	}
+	function checkId(f){
+		if(f.value.length==0){
+			alert('못나감 ㅇㅇ')
+			f.focus();
+			return false;
+		}
+	}
+	
+
+</script>
+</head>
+<body>
+<hr noshade>
+이름을 입력하는 난에 4글자 이상 입력되면 경고 메시지 출력
+<br>
+<form name="f">
+이름 <input type="text" name="t" oninput="check1(this)"><br>
+<hr noshade>
+<h3>아이디 입력받기 : 아이디가 입력되지 않으면 다른데 이동 못하도록 하기 onBlur : 포커스를 잃으면</h3>
+아이디 : <input type="text" name="id" onblur="checkId(this)"><br> 
+</form>
+</body>
+</html> 

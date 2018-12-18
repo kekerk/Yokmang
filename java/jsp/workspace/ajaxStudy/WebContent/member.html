@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>회원 이름 검색</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function loadName() {
+		var params = "name=" + document.getElementById("name").value;
+		sendRequest("member.jsp", params, memberList, "POST");//member.jsp에서 DB단 읽어오기.
+	}
+	function memberList() {
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				alert(httpRequest.responseText);
+				document.getElementById("list").innerHTML = httpRequest.responseText;
+			}else{
+				alert("서버오류:"+httpRequest.status);				
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	회원 이름 :
+	<input type="text" id="name">
+	<input type="button" value="검색" onclick="loadName()">
+	<br>
+	<div id="list"></div>
+</body>
+</html>

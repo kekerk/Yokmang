@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$("#submit").click(
+						function() {
+							event.preventDefault();
+							$.ajax({
+								url : "ajax2.jsp",
+								type : "POST",
+								data : "name=" + $("#name").val() + "&pass="	+ $("#pass").val(),
+								success : function(data) {
+									$("#message").html(data);
+								}
+							})
+						})
+			})
+</script>
+</head>
+<body>
+	<!--  1. name, pass 파라미터를 ajax2.jsp에 전송하기
+		2. ajax2.jsp에서 name 값이 guest이고, pass값 jquery인 경우 로그인 성공. 그 외는 실패
+					- 로그인 성공 : 반갑습니다. 고객님 메세지 전달
+					- 로그인 실패 : 아이디 또는 비밀번호를 확인하세요.
+		3.id=message인 부분에 수신 메세지를 출력하기.
+ -->
+	<form name="f">
+		<input type="text" id="name"><br> <input type="password"
+			id="pass"><br> <input type="submit" value="전송"
+			id="submit"><br>
+	</form>
+	<div id="message"></div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+파일에 메시지 저장하기. java.lang.Exception: 파일에 메시지 저장하기.
+	at chap15.FileOutputStreamEx2.method2(FileOutputStreamEx2.java:23)
+	at chap15.FileOutputStreamEx2.method1(FileOutputStreamEx2.java:18)
+	at chap15.FileOutputStreamEx2.main(FileOutputStreamEx2.java:12)
+파일에 메시지 저장하기.
+java.lang.Exception: 파일에 메시지 저장하기.
+	at chap15.FileOutputStreamEx2.method2(FileOutputStreamEx2.java:22)
+	at chap15.FileOutputStreamEx2.method1(FileOutputStreamEx2.java:17)
+	at chap15.FileOutputStreamEx2.main(FileOutputStreamEx2.java:12)
+파일에 메시지 저장하기.
+java.lang.Exception: 파일에 메시지 저장하기.
+	at chap15.FileOutputStreamEx2.method2(FileOutputStreamEx2.java:22)
+	at chap15.FileOutputStreamEx2.method1(FileOutputStreamEx2.java:17)
+	at chap15.FileOutputStreamEx2.main(FileOutputStreamEx2.java:12)

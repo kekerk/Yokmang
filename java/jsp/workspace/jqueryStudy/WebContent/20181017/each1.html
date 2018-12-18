@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>배열 객체 예제</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+			var arr = [   // json 형태로 배열 객체 생성
+								{name:"구디", link:"http://www.goodee.co.kr"}, //index=0
+								{name:"네이버", link:"http://www.naver.com"},  //index=1
+								{name:"다음", link:"http://www.daum.net"},       //index=2
+								{name:"구글", link:"http://www.google.com"}    //index=3
+							]
+			var output = "";
+//			$.each(배열객체,함수(index,요소))  
+			$.each(arr,function(index,item){
+				output += "<a href='"+item.link+"'>";
+				output += "<h1>"+index+"."+item.name + "</h1></a>";
+				
+			});
+			// $("body").html(output) => body.innerHTML = output;
+			$("#arr1").html(output);
+			alert($("#arr1").html())
+			var obj = {name:"홍길동",gender:"남자"};
+			$.extend(obj,{part:"의적",loc:"율도국"});
+			output="";
+			$.each(obj,function(index,item) { //index,item으로 보기보다는 key,value로 본다.
+				output += index + ":"+item + "\n<br>";
+			})
+			$("#arr2").html(output);
+	})
+</script>
+</head>
+<body>
+<div id="arr1"></div>
+<hr>
+<div id="arr2"></div>
+</body>
+</html>

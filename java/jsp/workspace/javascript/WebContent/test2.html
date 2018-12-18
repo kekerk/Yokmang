@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	input {
+		text-align:right;
+	}
+
+</style>
+<script type="text/javascript">
+	function calctest(f2){
+		var ex = prompt('수식을 입력하세요');
+		f2.answer.value = eval(ex);
+	}
+</script>
+</head>
+<body>
+<h1>prompt 메시지 창을 이용하여 입력받은 수식의 결과를 answer 란에 출력하기.</h1>
+<form name="f2">
+<input type="button" value="수식입력하기" onclick="calctest(this.form)"><br>
+<input type="text" name ="answer">
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Json 연습</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#jsonbtn").click(function(){
+		$.ajax("ajaxjson.jsp",{
+			success : function(data){
+				var json = eval("("+data+")");
+				for(var i=0;i<json.length;i++){
+					$("#result").append("<h1>"+json[i].name + ":" +json[i].gender+":" +json[i].part+"</h1>");
+				}	
+			}
+	})
+	})
+	$("#errbtn").click(function(){
+		$.ajax("nopage.jsp",{
+			success:function(data){
+				alert(data);
+			},
+			error : function(xhr,status,error){
+				alert("서버오류:"+xhr.status +", error :"+error+", status : " +status);
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+	<button id="jsonbtn">JSON 연습</button>
+	<button id="errbtn">error 연습</button>
+	<div id="result"></div>
+</body>
+</html>

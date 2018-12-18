@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이미지 이동하기</title>
+<script type="text/javascript">
+	function moveright() {
+		var left = layer1.style.left;
+		var top = layer1.style.top;
+		take1 = parseInt(left.substring(0,left.indexOf('px'))); 
+		take2 = parseInt(top.substring(0,top.indexOf('px'))); // 인덱스 값을 가져와야하기 때문에. top.substring(0,top.indexOf('px'))
+		layer1.style.left=(take1+2)+"px";
+		layer1.style.top=(take2+2)+"px";
+		if(take1+2 > 400){
+			clearTimeout('moveright()');
+		}else{
+			setTimeout('moveright()',300);
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="이동" onclick="moveright()">
+<div id="layer1" style="left:0px; position:absolute; top:100px;"> <!--  위에서 100px 위치에서 시작. -->
+	<img src="icon1.jpg">
+</div>
+</body>
+</html>
