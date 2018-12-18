@@ -4,11 +4,11 @@ Created on 2018. 12. 18.
 @author: gdj4
 '''
 
-num1 = input("숫자1 입력 : ")
-num2 = input("숫자2 입력 : ")
+num1 = input("숫자1 입력 : ") # 문자열 입력받기
+num2 = input("숫자2 입력 : ") # 문자열 입력받기
 
 try : 
-    num1 = int(num1)
+    num1 = int(num1) # 정수형 형변환
     num2 = int(num2)
     while True :
         res = num1/num2
