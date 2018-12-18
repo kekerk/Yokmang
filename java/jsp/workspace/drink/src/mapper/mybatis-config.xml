@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /src/mapper/mybatis-config.xml -->
+<!-- 문서는 PUBLIC 공인이지만 -일 때는 기관이 공인이 아님 +이면 공인이 맞음 -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+ <properties resource="mapper/mybatis.properties"/>
+  <typeAliases>
+  <!-- java의 클래스명은 pakage명.클래스명이 원래의 이름이다. -->
+   <typeAlias type="model.Board" alias="Board"/>
+  <typeAlias type="model.Member" alias="Member"/>
+  <typeAlias type="model.Reply" alias="Reply"/>
+  <typeAlias type="model.Rec" alias="Rec"/>
+  </typeAliases>
+  <!-- JDBC Connection 정보 -->
+  <environments default="development">
+  <environment id="development">
+   <transactionManager type="JDBC"/>
+   <dataSource type="POOLED">
+    <property name="driver" value="${jdbc.driver}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+   </dataSource>
+   </environment>
+  </environments>
+  <!-- SQL 구문 설정 -->
+  <mappers>
+  <mapper resource="mapper/BoardMapper.xml"/>
+  <mapper resource="mapper/MemberMapper.xml"/>
+  </mappers>
+</configuration>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<decorators defaultdir="/decorator">
+  <decorator name="main" page="decorator.jsp">
+   <pattern>/main/member/*</pattern>
+   <pattern>/main/board/*</pattern>
+  </decorator>
+  <!-- layout 제외 -->
+  <excludes>
+    <pattern>/main/member/memberimgForm*</pattern>
+    <pattern>/main/member/passchgForm*</pattern>
+  </excludes>
+</decorators>

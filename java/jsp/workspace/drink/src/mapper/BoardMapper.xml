@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BoardMapper">
+<select id="boardCount" resultType="int" parameterType="map">
+  select count(*) from board
+  <trim prefix ="where" prefixOverrides="AND|OR">
+  <if test="column != null and find != null">
+    and ${column} like '%${find}%'
+  </if>
+     <if test="code != null">
+    and code = #{code}
+   </if>
+  </trim>
+</select>
+<select id = "rselect" resultType="Reply" parameterType="map">
+ select * from reply
+ <if test="rnum != null">
+  where rnum=#{rnum}
+ </if>
+</select>
+  <select id = "select" resultType="Board" parameterType="map">
+    select * from board
+   <trim prefix ="where" prefixOverrides="AND|OR">
+    <if test = "num != null">
+     and num=#{num}
+    </if>
+      <if test="column != null and find != null">
+    and ${column} like '%${find}%'
+  </if>
+     <if test="code != null">
+    and code = #{code}
+   </if>
+    <if test="startrow != null and limit !=null">
+    limit #{startrow},#{limit}
+    </if>
+  </trim>
+  </select>
+  
+  <select id = "rlist" resultType="Reply" parameterType="map">
+    select * from reply
+    <if test="num != null">
+     where num=#{num}
+    </if>
+    <if test="rstartrow != null and rlimit !=null">
+    limit #{rstartrow},#{rlimit}
+    </if>
+  </select>
+</mapper>

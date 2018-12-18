@@ -18,3 +18,5 @@ except ZeroDivisionError :
     print("0으로 나눌 수 없습니다.")
 except KeyboardInterrupt :
     print("Ctrl + c 키를 눌렀습니다.")
+finally:
+    print("프로그램 종료")
