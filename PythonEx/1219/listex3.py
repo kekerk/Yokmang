@@ -8,7 +8,7 @@ sides = ["오뎅","단무지","김치"]
 for food,side in zip(foods,sides) :
     print(food,'=>',side)
     
-# 두 개의 리스트를 튜플의 리스트 개겣로 생성
+# 두 개의 리스트를 튜플의 리스트 객체로 생성
 tupList = list(zip(foods,sides))
 print(tupList)
 
