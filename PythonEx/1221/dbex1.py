@@ -6,9 +6,10 @@ dbex1.py : sqlite3 db와 연결하기
 '''
 import sqlite3
 
-dbpath = "test.sqlite"
+dbpath = "test.sqlite" # db 저장파일 이름
 conn = sqlite3.connect(dbpath)
-cur = conn.cursor()
+cur = conn.cursor() # 명령 전달 객체 생성
+# executescript : 여러개의 sql 구문을 실행
 cur.executescript('''
   drop table if exists items;
   create table items (item_id integer primary key,
@@ -18,9 +19,11 @@ cur.executescript('''
   insert into items (name, price) values ('Orange',500);
   insert into items (name, price) values ('Banana',300);
 ''')
+# 트랜젝션 종료. 실제로 insert 구문이 실행
 conn.commit()
 cur = conn.cursor()
 cur.execute("select item_id, name,price from items")
+# cur.fetchall() : cur에 저장된 db read 정보를 조회
 item_list = cur.fetchall()
 for it in item_list :
     print(it)
