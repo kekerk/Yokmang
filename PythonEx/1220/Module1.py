@@ -16,7 +16,7 @@ def func2():
 def func3():
     print("Module1.py 의 func3() 메서드 실행")
 
-def func4() :
+if __name__ == '__main__' :
     print(sys.builtin_module_names) # 표준 모듈 목록 리턴
     print(dir(__builtins__))
     print(dir(math))
