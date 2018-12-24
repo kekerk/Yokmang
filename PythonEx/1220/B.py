@@ -5,7 +5,8 @@ Created on 2018. 12. 20.
 '''
 import Module1
 
-# 위처럼 import를 해주면 파일명.메서드명으로 호출
+
+# ?��처럼 import�? ?��주면 ?��?���?.메서?��명으�? ?���?
 Module1.func1()
 Module1.func2()
 Module1.func3()

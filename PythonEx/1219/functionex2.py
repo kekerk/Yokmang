@@ -4,8 +4,8 @@ Created on 2018. 12. 19.
 @author: gdj4
 '''
 
-# \ : ë‹¤ìŒì¤„ë„ í‘œí˜„
-def getMean(numbericValue): # ìˆ«ìž í˜•íƒœì˜ ê°’
+# \ : ?‹¤?Œì¤„ë„ ?‘œ?˜„
+def getMean(numbericValue): # ?ˆ«?ž ?˜•?ƒœ?˜ ê°?
     return sum(numbericValue)/len(numbericValue)\
         if len(numbericValue) > 0\
         else float("NaN")

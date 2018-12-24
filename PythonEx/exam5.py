@@ -1,6 +1,6 @@
 '''
 Created on 2018. 12. 17.
-ì•”í˜¸í™”/ë³µí˜¸í™” í•˜ê¸°
+?•”?˜¸?™”/ë³µí˜¸?™” ?•˜ê¸?
 @author: gdj-4
 '''
 pCode = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -9,44 +9,44 @@ cCode = [ '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', 
                 '{', '}', ';', ':', ',', '.', '/', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p' ]
 '''
 cipher = ""
-print("ì•”í˜¸í™”ì‹œí‚¬ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”")
+print("?•”?˜¸?™”?‹œ?‚¬ ë¬¸ì?—´?„ ?…? ¥?•˜?„¸?š”")
 text = str(input())
 for i in range(0, len(text)) :
     if text[i] in pCode :
         cipher = cipher + cCode[pCode.index(text[i])]
-print("ì•”í˜¸ë¬¸ : ", cipher)
+print("?•”?˜¸ë¬? : ", cipher)
 cipher = ""
 text = ""
-print("ë³µí˜¸í™”ì‹œí‚¬ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”")
+print("ë³µí˜¸?™”?‹œ?‚¬ ë¬¸ì?—´?„ ?…? ¥?•˜?„¸?š”")
 cipher = str(input())
 for i in range(0, len(cipher)) :
     if cipher[i] in cCode :
         text = text + pCode[cCode.index(cipher[i])]
-print("ì•”í˜¸ë¬¸ : ", text)
+print("?•”?˜¸ë¬? : ", text)
 
 '''
 cipher = ""
 while(True) :
-    print("ì•”í˜¸í™”[1] / ë³µí˜¸í™”[2] ì„ íƒ")
+    print("?•”?˜¸?™”[1] / ë³µí˜¸?™”[2] ?„ ?ƒ")
     num = int(input())
     if(num == 1) :
-        print("ì•”í˜¸í™”ì‹œí‚¬ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”")
+        print("?•”?˜¸?™”?‹œ?‚¬ ë¬¸ì?—´?„ ?…? ¥?•˜?„¸?š”")
         text = str(input())
         for i in range(0,len(text)) :
             for j in range(0,len(pCode)) :
                 if text[i] == pCode[j] :
                     cipher += cCode[j]
-        print("ì•”í˜¸í™”: ",cipher)
+        print("?•”?˜¸?™”: ",cipher)
         cipher, text = "", ""
     elif(num ==2) :
-        print("ë³µí˜¸í™”ì‹œí‚¬ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”")
+        print("ë³µí˜¸?™”?‹œ?‚¬ ë¬¸ì?—´?„ ?…? ¥?•˜?„¸?š”")
         cipher = str(input())
         for i in range(0,len(cipher)) :
             for j in range(0,len(cCode)) :
                 if cipher[i] == cCode[j] :
                     text += pCode[j]
-        print("ë³µí˜¸í™”: ",text)
+        print("ë³µí˜¸?™”: ",text)
         cipher, text = "", ""
     else :
-        print("ì ‘ê·¼ ì—ëŸ¬. ì•”í˜¸í”„ë¡œê·¸ë¨ ê°•ì œì¢…ë£Œ")
+        print("? ‘ê·? ?—?Ÿ¬. ?•”?˜¸?”„ë¡œê·¸?¨ ê°•ì œì¢…ë£Œ")
         break

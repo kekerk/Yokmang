@@ -4,4 +4,4 @@ Created on 2018. 12. 20.
 @author: gdj4
 '''
 def func1():
-    print("ModuleTest ìž…ë‹ˆë‹¤.")
+    print("ModuleTest ?ž…?‹ˆ?‹¤.")

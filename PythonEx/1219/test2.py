@@ -15,10 +15,10 @@ if __name__=='__main__' :
     car='A'
     for i in range(0,3) :
 '''
-  ord(car) : 'A' ì˜ ì•„ìŠ¤í‚¤ì½”ë“œ ê°’
-  chr(ord(car)+i) : ì•„ìŠ¤í‚¤ ê°’ì„ ë¬¸ìì—´ë¡œ ë³€ê²½
+  ord(car) : 'A' ?˜ ?•„?Š¤?‚¤ì½”ë“œ ê°?
+  chr(ord(car)+i) : ?•„?Š¤?‚¤ ê°’ì„ ë¬¸ì?—´ë¡? ë³?ê²?
 '''
-        push("ìë™ì°¨ "+chr(ord(car)+i))
+        push("??™ì°? "+chr(ord(car)+i))
     print(parking)
         
     for i in range(0,3) :

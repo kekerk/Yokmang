@@ -23,7 +23,7 @@ cur.executescript('''
 conn.commit()
 cur = conn.cursor()
 cur.execute("select item_id, name,price from items")
-# cur.fetchall() : cur에 저장된 db read 정보를 조회
+# cur.fetchall() : cur에 저장된 db read 정보를 전부 조회
 item_list = cur.fetchall()
 for it in item_list :
     print(it)

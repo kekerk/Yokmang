@@ -3,14 +3,14 @@ Created on 2018. 12. 19.
 
 @author: gdj4
 
-toupleex1.py : íŠœí”Œ ì˜ˆì œ
+toupleex1.py : ?Šœ?”Œ ?˜ˆ? œ
 
-ë¦¬ìŠ¤íŠ¸ : ìˆœì„œìœ ì§€, ë°°ì—´  => [ ]
-ë”•ì…”ë„ˆë¦¬ : (key, value) ìŒìœ¼ë¡œ ì €ìž¥ëœ ê°ì²´ = > { }
-íŠœí”Œ : ìˆœì„œìœ ì§€ , ìˆ˜ì • ë¶ˆê°€ ë¦¬ìŠ¤íŠ¸ => ( )
+ë¦¬ìŠ¤?Š¸ : ?ˆœ?„œ?œ ì§?, ë°°ì—´  => [ ]
+?”•?…”?„ˆë¦? : (key, value) ?Œ?œ¼ë¡? ???ž¥?œ ê°ì²´ = > { }
+?Šœ?”Œ : ?ˆœ?„œ?œ ì§? , ?ˆ˜? • ë¶ˆê? ë¦¬ìŠ¤?Š¸ => ( )
 '''
 
-def getMean(numbericValue): # ìˆ«ìž í˜•íƒœì˜ ê°’
+def getMean(numbericValue): # ?ˆ«?ž ?˜•?ƒœ?˜ ê°?
     return sum(numbericValue)/len(numbericValue)\
         if len(numbericValue) > 0\
         else float("NaN")

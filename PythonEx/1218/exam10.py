@@ -12,4 +12,4 @@ for s in inStr :
         outfp.writelines(s)
 infp.close()
 outfp.close()
-print("프로그램 종료")
+print("?��로그?�� 종료")

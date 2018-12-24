@@ -3,7 +3,7 @@ Created on 2018. 12. 17.
 
 @author: gdj-4
 '''
-score = int(input("์ ์๋ฅผ ์…๋ ฅํ•์ธ์”(0~100):"))
+score = int(input("? ?๋ฅ? ?…? ฅ?•?ธ?”(0~100):"))
 if score>=90 :
     print("A")
 else : 
@@ -18,10 +18,10 @@ else :
             else : 
                 print("F")
         
-print("if elif ์—ฐ์ต")
+print("if elif ?—ฐ?ต")
 if score >= 90 :
     print("A")
-elif score >= 80 : #java์ else if์€ ๊ฐ๋ค.
+elif score >= 80 : #java? else if?? ๊ฐ๋ค.
     print("B")
 elif score >= 70 :
     print("C")
@@ -30,5 +30,5 @@ elif score >= 60 :
 else :
     print("F")
     
-#switch ๊ตฌ๋ฌธ์ด ์—๋ค.
+#switch ๊ตฌ๋ฌธ?ด ?—?ค.
             

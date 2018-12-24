@@ -2,32 +2,32 @@
 Created on 2018. 12. 18.
 
 @author: gdj-4
-listex1.py : ë¦¬ìŠ¤íŠ¸ì˜ˆì œ
+listex1.py : ë¦¬ìŠ¤?Š¸?˜ˆ? œ
 '''
 myList = [30,10,20] 
-print("í˜„ì¬ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("?˜„?¬ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
 myList.append(40)
-print("append(40) í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("append(40) ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
-print("pop()ìœ¼ë¡œ ì¶”ì¶œí•œ ê°’ : %s" % myList.pop()) #ìŠ¤íƒì²˜ëŸ¼ ì‚¬ìš©
-print("pop() í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("pop()?œ¼ë¡? ì¶”ì¶œ?•œ ê°? : %s" % myList.pop()) #?Š¤?ƒì²˜ëŸ¼ ?‚¬?š©
+print("pop() ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
 myList.sort()
-print("sort() í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("sort() ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
 myList.reverse()
-print("reverse() í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("reverse() ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
-print("20 ê°’ì˜ ìœ„ì¹˜ : %d" % myList.index(20)) #20ì´ë¼ëŠ” ê°’ì˜ ìœ„ì¹˜ ë¦¬í„´
+print("20 ê°’ì˜ ?œ„ì¹? : %d" % myList.index(20)) #20?´?¼?Š” ê°’ì˜ ?œ„ì¹? ë¦¬í„´
 
 myList.insert(2, 222)
-print("insert(2,222) í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("insert(2,222) ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
 myList.remove(222)
-print("remove(222) í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+print("remove(222) ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
-myList.extend([77,88,77]) #list ëŠ˜ë¦¬ê¸°
-print("extend([77,88,77]) í›„ì˜ ë¦¬ìŠ¤íŠ¸ : %s" % myList)
+myList.extend([77,88,77]) #list ?Š˜ë¦¬ê¸°
+print("extend([77,88,77]) ?›„?˜ ë¦¬ìŠ¤?Š¸ : %s" % myList)
 
-print("77 ê°’ì˜ ê°¯ìˆ˜ : %d" % myList.count(77)) #77ê°’ì˜ ê°¯ìˆ˜
+print("77 ê°’ì˜ ê°??ˆ˜ : %d" % myList.count(77)) #77ê°’ì˜ ê°??ˆ˜

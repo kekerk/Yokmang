@@ -2,8 +2,8 @@
 Created on 2018. 12. 20.
 
 @author: gdj4
-lambdaex1.py : ëŒë‹¤ í‘œí˜„ì‹
-  ëŒë‹¤ì‹ : í•¨ìˆ˜ê°ì²´
+lambdaex1.py : ?Œ?‹¤ ?‘œ?˜„?‹
+  ?Œ?‹¤?‹ : ?•¨?ˆ˜ê°ì²´
 '''
 def hap(num1,num2):
     res = num1 + num2

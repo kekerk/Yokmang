@@ -1,15 +1,15 @@
 '''
 Created on 2018. 12. 20.
-exam19.py : íŒŒì¼ì„ ì½ì–´ì„œ ë¼ì¸ìˆ˜ì™€ ë‚´ìš©ì„ í™”ë©´ì— ì¶œë ¥í•˜ê¸°
+exam19.py : ?ŒŒ?¼?„ ?½?–´?„œ ?¼?¸?ˆ˜?? ?‚´?š©?„ ?™”ë©´ì— ì¶œë ¥?•˜ê¸?
 @author: gdj4
 '''
 
-inFp = None # ì…ë ¥íŒŒì¼
-inStr = "" # ì½ì–´ì˜¨ ë¬¸ìì—´
-inFp = open("c:/temp/data1.txt","r") # íŒŒì¼ì„ ì½ì–´ì˜´
+inFp = None # ?…? ¥?ŒŒ?¼
+inStr = "" # ?½?–´?˜¨ ë¬¸ì?—´
+inFp = open("c:/temp/data1.txt","r") # ?ŒŒ?¼?„ ?½?–´?˜´
 count = 0
 while True :
-    inStr = inFp.readline() # inFpì—ì„œ ì½ì–´ì˜¨ íŒŒì¼ì„ í•œ í–‰ ì½ì–´ inStrì— ì €ì¥
+    inStr = inFp.readline() # inFp?—?„œ ?½?–´?˜¨ ?ŒŒ?¼?„ ?•œ ?–‰ ?½?–´ inStr?— ???¥
     count += 1
     if inStr == "" :
         break

@@ -21,12 +21,12 @@ def calc(v1,v2,op):
 res = 0
 var1, var2, oper = 0,0,""
 
-var1 = int(input("ì²«ë²ˆì§¸ ìˆ˜ ì…ë ¥ : "))  
-oper = input("ê³„ì‚°ì‹ ì…ë ¥ (+,-,*,/,**) : ")
-var2 = int(input("ë‘ë²ˆì§¸ ìˆ˜ ì…ë ¥ : "))
+var1 = int(input("ì²«ë²ˆì§? ?ˆ˜ ?…? ¥ : "))  
+oper = input("ê³„ì‚°?‹ ?…? ¥ (+,-,*,/,**) : ")
+var2 = int(input("?‘ë²ˆì§¸ ?ˆ˜ ?…? ¥ : "))
 
 try :
     res = calc(var1,var2,oper)
-    print("ê³„ì‚°ê¸° : %d %s %d = %d" %(var1,oper,var2,res))
+    print("ê³„ì‚°ê¸? : %d %s %d = %d" %(var1,oper,var2,res))
 except ZeroDivisionError :
-    print("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ì–´ìš”")
+    print("0?œ¼ë¡? ?‚˜?ˆŒ ?ˆ˜ ?—†?–´?š”")

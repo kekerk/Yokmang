@@ -18,12 +18,12 @@ hap,sub = 0,0
 myList = multi(100,200)
 hap = myList[0]
 sub = myList[1]
-print("multi í•¨ìˆ˜ì˜ ë¦¬í„´ê°’ : %d, %d" % (hap,sub))
+print("multi ?•¨?ˆ˜?˜ ë¦¬í„´ê°? : %d, %d" % (hap,sub))
 
-#ìë°”ì—ì„œë„ ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ê°€ ì§€ì •ë˜ì§€ ì•Šì„ ìˆ˜ ìˆë‹¤
+#?ë°”ì—?„œ?„ ë§¤ê°œë³??ˆ˜?˜ ê°??ˆ˜ê°? ì§?? •?˜ì§? ?•Š?„ ?ˆ˜ ?ˆ?‹¤
 '''
   public static void mymethod(Object ... args) {
  }
-  Pythonì—ì„œëŠ”
+  Python?—?„œ?Š”
   def mymethod(*args)
 '''

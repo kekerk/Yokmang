@@ -5,13 +5,14 @@ Created on 2018. 12. 20.
 '''
 
 import random
+
 def getNumber():
     return random.randrange(1,46)
 
 num = 0
 lotto = []
 
-print("로또 추첨 시작")
+print("로또 추첨 ?��?��")
 
 while True :
     num = getNumber()

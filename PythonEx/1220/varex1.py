@@ -5,12 +5,12 @@ Created on 2018. 12. 20.
 '''
 
 def func1():
-    global a;  # ì´ í•¨ìˆ˜ ì•ˆì—ì„œ aëŠ” ì „ì—­ë³€ìˆ˜ global ì˜ˆì•½ì–´ë¡œ ì´ í•¨ìˆ˜ë¥¼ ì „ì—­ë³€ìˆ˜ë¡œ ì§€ì •
+    global a;  # ?´ ?•¨?ˆ˜ ?•ˆ?—?„œ a?Š” ? „?—­ë³??ˆ˜ global ?˜ˆ?•½?–´ë¡? ?´ ?•¨?ˆ˜ë¥? ? „?—­ë³??ˆ˜ë¡? ì§?? •
     a = 10
-    print("func1()ì—ì„œ aê°’ %d" % a) # ì§€ì—­ë³€ìˆ˜ a
+    print("func1()?—?„œ aê°? %d" % a) # ì§??—­ë³??ˆ˜ a
 
 def func2():
-    print("func2()ì—ì„œ aê°’ %d"%a) #ì „ì—­ë³€ìˆ˜ a
+    print("func2()?—?„œ aê°? %d"%a) #? „?—­ë³??ˆ˜ a
     
 a=20
 func1()

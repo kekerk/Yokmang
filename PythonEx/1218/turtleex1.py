@@ -1,23 +1,24 @@
 '''
 Created on 2018. 12. 18.
-turtleex1.py : GUI ê´€ë ¨ íŒ¨í‚¤ì§€
+turtleex1.py : GUI ê´?? ¨ ?Œ¨?‚¤ì§?
 @author: gdj-4
 '''
-import turtle
 import random
 from tkinter.simpledialog import *
+import turtle
+
 
 inStr = ""
 swidth, sheight = 300, 300
 tx,ty,txtsize = [0]*3
-#GUI ìœˆë„ìš° ì„¤ì •
-turtle.title("ê±°ë¶ ê¸€ìì“°ê¸°")
+#GUI ?œˆ?„?š° ?„¤? •
+turtle.title("ê±°ë¶ ê¸???“°ê¸?")
 turtle.shape("turtle")
 turtle.setup(width=swidth+50,height=sheight+50)
 turtle.screensize(swidth, sheight)
-turtle.penup() #ê¸€ìì“°ê¸°
-#ëŒ€í™”ì°½ ì¶œë ¥
-inStr=askstring("ë¬¸ìì—´ ì…ë ¥","ê±°ë¶ì´ê°€ ì“¸ ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”") #tkinter.simpledialog íŒ¨í‚¤ì§€ì˜ ë©”ì„¸ì§€(dialogì°½)
+turtle.penup() #ê¸???“°ê¸?
+#???™”ì°? ì¶œë ¥
+inStr=askstring("ë¬¸ì?—´ ?…? ¥","ê±°ë¶?´ê°? ?“¸ ë¬¸ì?—´?„ ?…? ¥?•˜?„¸?š”") #tkinter.simpledialog ?Œ¨?‚¤ì§??˜ ë©”ì„¸ì§?(dialogì°?)
 for ch in inStr :
     tx = random.randrange(-swidth/2, swidth/2)
     ty = random.randrange(-sheight/2, sheight/2)
@@ -27,8 +28,8 @@ for ch in inStr :
     b = random.random()
     txtsize = random.randrange(10,50)
     turtle.goto(tx,ty)
-    turtle.pencolor((r,g,b)) # pencolor : ë‚´ë¶€ì—ì„œ 255ë¥¼ ê³±í•œë‹¤.
-    turtle.write(ch,font=("ë§‘ì€ ê³ ë”•",txtsize,"bold"))
+    turtle.pencolor((r,g,b)) # pencolor : ?‚´ë¶??—?„œ 255ë¥? ê³±í•œ?‹¤.
+    turtle.write(ch,font=("ë§‘ì? ê³ ë”•",txtsize,"bold"))
 turtle.done()
 
 

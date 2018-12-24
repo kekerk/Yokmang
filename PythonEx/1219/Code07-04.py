@@ -9,7 +9,7 @@ bb = []
 num,cnt = 0,0
 
 while True :
-    if num % 3 == 0 : # 3ì˜ ë°°ìˆ˜ì˜ ê°’
+    if num % 3 == 0 : # 3?˜ ë°°ìˆ˜?˜ ê°?
         aa.append(num)
         cnt+=1
     if cnt >= 200 :

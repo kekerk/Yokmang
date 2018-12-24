@@ -1,8 +1,8 @@
 singer = {}
-singer['ì´ë¦„'] = 'íŠ¸ì™€ì´ìŠ¤'
-singer['ë©¤ë²„ ìˆ˜'] = 9
-singer['ë°ë·”'] = 'ì„œë°”ì´ë²Œ ì‹ìŠ¤í‹´'
-singer['ëŒ€í‘œê³¡'] = 'cheer up'
+singer['?´ë¦?'] = '?Š¸???´?Š¤'
+singer['ë©¤ë²„ ?ˆ˜'] = 9
+singer['?°ë·?'] = '?„œë°”ì´ë²? ?‹?Š¤?‹´'
+singer['???‘œê³?'] = 'cheer up'
 
 for i in singer.keys() :
     print("%s => %s" %(i,singer[i]))

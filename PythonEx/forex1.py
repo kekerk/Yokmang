@@ -3,16 +3,17 @@ Created on 2018. 12. 17.
 
 @author: gdj-4
 '''
-import random #ìœ í‹¸ë¦¬í‹°(ê¸°ëŠ¥)ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ê°ì²´ë¥¼ ëŒê³  ì˜¤ê¸°.
-import keyword #ìë°”ì˜ package importí•˜ëŠ” ê²ƒê³¼ ë¹„ìŠ·
+import keyword  # ?ë°”ì˜ package import?•˜?Š” ê²ƒê³¼ ë¹„ìŠ·
+import random  # ?œ ?‹¸ë¦¬í‹°(ê¸°ëŠ¥)ë¥? ?‚¬?š©?•˜ê¸? ?œ„?•œ ê°ì²´ë¥? ?Œê³? ?˜¤ê¸?.
 
-numbers = [] #ë°°ì—´ ì„ ì–¸, ë¦¬ìŠ¤íŠ¸ ì„ ì–¸
-for num in range(0,10,2) : #0ì—ì„œ 9ê¹Œì§€ 1ì”© ì¦ê°€í•˜ë©´ì„œ ë°˜ë³µí•¨. numbers.length : 10
-    numbers.append(random.randrange(0,10)) #0ë¶€í„° 9ê¹Œì§€ ì„ì˜ì˜ ê°’ì„ ì°¾ì•„ì„œ numbersì— ì¶”ê°€
-print("ìƒì„±ëœ ë¦¬ìŠ¤íŠ¸",numbers)
+
+numbers = [] #ë°°ì—´ ?„ ?–¸, ë¦¬ìŠ¤?Š¸ ?„ ?–¸
+for num in range(0,10,2) : #0?—?„œ 9ê¹Œì? 1?”© ì¦ê??•˜ë©´ì„œ ë°˜ë³µ?•¨. numbers.length : 10
+    numbers.append(random.randrange(0,10)) #0ë¶??„° 9ê¹Œì? ?„?˜?˜ ê°’ì„ ì°¾ì•„?„œ numbers?— ì¶”ê?
+print("?ƒ?„±?œ ë¦¬ìŠ¤?Š¸",numbers)
 
 for num in range(0,10,2) :
     if(num not in numbers) : 
-        print("ìˆ«ì %dëŠ” ë¦¬ìŠ¤íŠ¸ì— ì—†ìŠµë‹ˆë‹¤." % num)
+        print("?ˆ«? %d?Š” ë¦¬ìŠ¤?Š¸?— ?—†?Šµ?‹ˆ?‹¤." % num)
 
-print(keyword.kwlist) #íŒŒì´ì¬ì—ì„œ ì‚¬ìš©ë˜ëŠ” ì˜ˆì•½ì–´ ëª©ë¡ ì¶œë ¥í•¨.
+print(keyword.kwlist) #?ŒŒ?´?¬?—?„œ ?‚¬?š©?˜?Š” ?˜ˆ?•½?–´ ëª©ë¡ ì¶œë ¥?•¨.

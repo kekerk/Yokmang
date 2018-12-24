@@ -2,21 +2,21 @@
 Created on 2018. 12. 21.
 
 @author: gdj4
-classEx6.py : ì¶”ìƒë©”ì„œë“œ
-            ë¶€ëª¨í´ë˜ìŠ¤ì˜ ë©”ì„œë“œ ì¤‘ ì„ ì–¸ë¶€ë§Œ ìˆê³  êµ¬í˜„ë¶€ëŠ” passë¡œ ì±„ì›€
+classEx6.py : ì¶”ìƒë©”ì„œ?“œ
+            ë¶?ëª¨í´?˜?Š¤?˜ ë©”ì„œ?“œ ì¤? ?„ ?–¸ë¶?ë§? ?ˆê³? êµ¬í˜„ë¶??Š” passë¡? ì±„ì?
 '''
 
 class SuperClass :
     def method(self):
-        raise NotImplemented # í•˜ìœ„ í´ë˜ìŠ¤ì—ì„œ ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë”© í•„ìš”
+        raise NotImplemented # ?•˜?œ„ ?´?˜?Š¤?—?„œ ë°˜ë“œ?‹œ ?˜¤ë²„ë¼?´?”© ?•„?š”
     
 class SubClass1(SuperClass):
     def method(self):
-        print("SubClass1ì—ì„œ method()ë¥¼ ì˜¤ë²„ë¼ì´ë”©í•¨")
+        print("SubClass1?—?„œ method()ë¥? ?˜¤ë²„ë¼?´?”©?•¨")
 
 class SubClass2(SuperClass):
     def method(self):
-        print("SubClass2ì—ì„œ method()ë¥¼ ì˜¤ë²„ë¼ì´ë”©í•¨")
+        print("SubClass2?—?„œ method()ë¥? ?˜¤ë²„ë¼?´?”©?•¨")
 
 sub1 = SubClass1()
 sub2 = SubClass2()

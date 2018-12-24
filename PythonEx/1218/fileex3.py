@@ -1,6 +1,6 @@
 '''
 Created on 2018. 12. 18.
-fileex3 : utf-8íŒŒì¼ ì½ê¸°
+fileex3 : utf-8?ŒŒ?¼ ?½ê¸?
 @author: gdj4
 '''
 

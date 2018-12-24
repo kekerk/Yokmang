@@ -7,7 +7,7 @@ i,kt=0,0
 s = ""
 t = []
 for i in range(2,10,1):
-    s= s+("    %dë‹¨             " % i)
+    s= s+("    %d?‹¨             " % i)
 print(s)
 s=""
 for i in range(2,10,1):

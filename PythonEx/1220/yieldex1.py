@@ -2,15 +2,15 @@
 Created on 2018. 12. 20.
 
 @author: gdj4
-yieldex1.py : ì œë„ˆë ˆì´í„°ì™€, yield ì˜ˆì•½ì–´
-        yield : í•¨ìˆ˜ì˜ ì¢…ë£Œ ì—†ì´ ê°’ì„ ë¦¬ìŠ¤íŠ¸ë¡œ ë°˜í™˜í•¨
+yieldex1.py : ? œ?„ˆ? ˆ?´?„°??, yield ?˜ˆ?•½?–´
+        yield : ?•¨?ˆ˜?˜ ì¢…ë£Œ ?—†?´ ê°’ì„ ë¦¬ìŠ¤?Š¸ë¡? ë°˜í™˜?•¨
 '''
 def genFun(num):
     for i in range(10,num+10):
         yield i
-        print(i, "ê°’ ë°˜í™˜")
+        print(i, "ê°? ë°˜í™˜")
     
 print(list(genFun(5)))
 
 for data in genFun(5) :
-    print("mainì—ì„œ ì¶œë ¥ : " , data)
+    print("main?—?„œ ì¶œë ¥ : " , data)

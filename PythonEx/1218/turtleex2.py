@@ -5,6 +5,7 @@ Created on 2018. 12. 20.
 '''
 import turtle
 
+
 t = turtle.Pen()
 
 for x in range(1,30,1):

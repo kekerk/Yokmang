@@ -4,27 +4,28 @@ Created on 2018. 12. 18.
 @author: gdj4
 '''
 
-import shutil
+from macpath import dirname
 import os
 import os.path
-from macpath import dirname
+import shutil
+
 
 print(dir(shutil))
 print(dir(os))
 print(dir(os.path))
 
 # shutil.copy("c:/windows/notepad.exe", "c:/temp/note.exe")
-# print("íŒŒì¼ ë³µì‚¬ ì™„ë£Œ")
+# print("?ŒŒ?¼ ë³µì‚¬ ?™„ë£?")
 # shutil.copytree("c:/temp","c:/temp3")
 
 
-''' c:/mydir í´ë” ìƒì„±í•˜ê¸° '''
+''' c:/mydir ?´?” ?ƒ?„±?•˜ê¸? '''
 os.mkdir("c:/mydir")
-# c:/mydir í´ë” ì§€ìš°ê¸°
+# c:/mydir ?´?” ì§??š°ê¸?
 # shutil.rmtree("c:/mydir/")
-# print("í´ë” ì‚­ì œ ì™„ë£Œ")
+# print("?´?” ?‚­? œ ?™„ë£?")
 
-print("íŒŒì¼ì˜ ëª©ë¡ ë³´ê¸° : os.walk í•¨ìˆ˜ ì‚¬ìš©")
+print("?ŒŒ?¼?˜ ëª©ë¡ ë³´ê¸° : os.walk ?•¨?ˆ˜ ?‚¬?š©")
 for dirName,subDirList,fnames in os.walk("c:\\windows\\debug") :
     for fname in fnames : 
         print(os.path.join(dirName,fname))

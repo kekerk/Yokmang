@@ -4,19 +4,20 @@ Created on 2018. 12. 20.
 @author: gdj4
 '''
 
-# ëª¨ë“ˆì—ì„œ í•¨ìˆ˜ ì„ ì–¸ì„ í•˜ì§€ ì•ŠëŠ” ë¶€ë¶„ì€ ì œì¼ ë¨¼ì € ì‹¤í–‰ì´ ëœë‹¤.
-# í•¨ìˆ˜ ë¶€ë¶„ì€ í•¨ìˆ˜ê°€ ì•„ë‹Œ ë¶€ë¶„ì„ ë¨¼ì € ì‹¤í–‰í•œ í›„ì— ì‹¤í–‰ì´ ëœë‹¤.
-import sys
+# ëª¨ë“ˆ?—?„œ ?•¨?ˆ˜ ?„ ?–¸?„ ?•˜ì§? ?•Š?Š” ë¶?ë¶„ì? ? œ?¼ ë¨¼ì? ?‹¤?–‰?´ ?œ?‹¤.
+# ?•¨?ˆ˜ ë¶?ë¶„ì? ?•¨?ˆ˜ê°? ?•„?‹Œ ë¶?ë¶„ì„ ë¨¼ì? ?‹¤?–‰?•œ ?›„?— ?‹¤?–‰?´ ?œ?‹¤.
 import math
+import sys
+
 def func1():
-    print("Module1.py ì˜ func1() ë©”ì„œë“œ ì‹¤í–‰")
+    print("Module1.py ?˜ func1() ë©”ì„œ?“œ ?‹¤?–‰")
 def func2():
-    print("Module1.py ì˜ func2() ë©”ì„œë“œ ì‹¤í–‰")
+    print("Module1.py ?˜ func2() ë©”ì„œ?“œ ?‹¤?–‰")
  
 def func3():
-    print("Module1.py ì˜ func3() ë©”ì„œë“œ ì‹¤í–‰")
+    print("Module1.py ?˜ func3() ë©”ì„œ?“œ ?‹¤?–‰")
 
 if __name__ == '__main__' :
-    print(sys.builtin_module_names) # í‘œì¤€ ëª¨ë“ˆ ëª©ë¡ ë¦¬í„´
+    print(sys.builtin_module_names) # ?‘œì¤? ëª¨ë“ˆ ëª©ë¡ ë¦¬í„´
     print(dir(__builtins__))
     print(dir(math))

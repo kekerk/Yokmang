@@ -4,14 +4,14 @@ Created on 2018. 12. 18.
 @author: gdj4
 '''
 
-myStr = "íŒŒì´ì¬ ê³µë¶€ì¤‘ì…ë‹ˆë‹¤. íŒŒì´ì¬ì€ ì‰½ìŠµë‹ˆë‹¤."
+myStr = "?ŒŒ?´?¬ ê³µë?ì¤‘ì…?‹ˆ?‹¤. ?ŒŒ?´?¬?? ?‰½?Šµ?‹ˆ?‹¤."
 strPosList = []
 index = 0
 while True :
     try :
-        index = myStr.index("íŒŒì´ì¬",index) # íŒŒì´ì¬ ë¬¸ìì˜ ìœ„ì¹˜ë¥¼ index ê°’ ì´í›„ì—ì„œ ê²€ìƒ‰
+        index = myStr.index("?ŒŒ?´?¬",index) # ?ŒŒ?´?¬ ë¬¸ì?˜ ?œ„ì¹˜ë?? index ê°? ?´?›„?—?„œ ê²??ƒ‰
         strPosList.append(index) # 0
         index += 1
     except :
         break
-print("íŒŒì´ì¬ ë¬¸ìì˜ ìœ„ì¹˜ :" ,strPosList)
+print("?ŒŒ?´?¬ ë¬¸ì?˜ ?œ„ì¹? :" ,strPosList)

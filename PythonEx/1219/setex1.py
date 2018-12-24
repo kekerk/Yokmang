@@ -5,20 +5,20 @@ Created on 2018. 12. 19.
 '''
 mySet1 = {1,2,3,4,5}
 mySet2 = {4,5,6,7}
-# setì€ ì¤‘ë³µìˆ˜ê°€ ë“¤ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤ 1219.test1ì—ì„œ ì‚¬ìš©í•¨.
+# set?? ì¤‘ë³µ?ˆ˜ê°? ?“¤?–´ê°?ì§? ?•Š?Š”?‹¤ 1219.test1?—?„œ ?‚¬?š©?•¨.
 
-# êµì§‘í•©
+# êµì§‘?•©
 print(mySet1 & mySet2) # {4, 5}
 print(mySet1.intersection(mySet2))
 
-# í•©ì§‘í•©
+# ?•©ì§‘í•©
 print(mySet1 | mySet2) # {1, 2, 3, 4, 5, 6, 7}
 print(mySet1.union(mySet2))
 
-# ì°¨ì§‘í•©
+# ì°¨ì§‘?•©
 print(mySet1 - mySet2) # {1, 2, 3}
 print(mySet1.difference(mySet2))
 
-# ëŒ€ì¹­ ì°¨ì§‘í•©
+# ??ì¹? ì°¨ì§‘?•©
 print(mySet1 ^ mySet2) # {1, 2, 3, 6, 7}
 print(mySet1.symmetric_difference(mySet2))

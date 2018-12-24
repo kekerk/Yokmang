@@ -2,35 +2,35 @@
 Created on 2018. 12. 21.
 
 @author: gdj4
-classEx5.py : í´ë˜ìŠ¤ì—ì„œ ì‚¬ìš©ë˜ëŠ” ì§€ì •ëœ íŠ¹ë³„í•œ ë©”ì„œë“œ
+classEx5.py : ?´?˜?Š¤?—?„œ ?‚¬?š©?˜?Š” ì§?? •?œ ?Š¹ë³„í•œ ë©”ì„œ?“œ
 '''
 class Line :
     length = 0
-    def __init__(self,length): # ìƒì„±ì ê°ì²´ ìƒì„± ì‹œ í˜¸ì¶œë˜ëŠ” ë©”ì„œë“œ
+    def __init__(self,length): # ?ƒ?„±? ê°ì²´ ?ƒ?„± ?‹œ ?˜¸ì¶œë˜?Š” ë©”ì„œ?“œ
         self.length = length
-        print(self.length,"ê¸¸ì´ì˜ ì„ ì´ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.")
-    def __del__(self): # ì†Œë©¸ì : ê°ì²´ ì œê±°ì‹œ í˜¸ì¶œë˜ëŠ” ë©”ì„œë“œ
-        print(self.length,"ê¸¸ì´ì˜ ì„ ì´ ì œê±° ë˜ì—ˆìŠµë‹ˆë‹¤.")
-    def __repr__(self): # ìë°”ì˜ toStringê°™ì€ ê¸°ëŠ¥ì„ ê°€ì§. ê°ì²´ì˜ ì¶œë ¥ ë‹´ë‹¹í•˜ëŠ” ë©”ì„œë“œ
-        return "ì„ ì˜ ê¸¸ì´ : "+str(self.length)
-    def __add__(self,other): # ë”í•˜ê¸° ì—°ì‚°ì ì‚¬ìš©ì‹œ í˜¸ì¶œë˜ëŠ” ë©”ì„œë“œ
+        print(self.length,"ê¸¸ì´?˜ ?„ ?´ ?ƒ?„±?˜?—ˆ?Šµ?‹ˆ?‹¤.")
+    def __del__(self): # ?†Œë©¸ì : ê°ì²´ ? œê±°ì‹œ ?˜¸ì¶œë˜?Š” ë©”ì„œ?“œ
+        print(self.length,"ê¸¸ì´?˜ ?„ ?´ ? œê±? ?˜?—ˆ?Šµ?‹ˆ?‹¤.")
+    def __repr__(self): # ?ë°”ì˜ toStringê°™ì? ê¸°ëŠ¥?„ ê°?ì§?. ê°ì²´?˜ ì¶œë ¥ ?‹´?‹¹?•˜?Š” ë©”ì„œ?“œ
+        return "?„ ?˜ ê¸¸ì´ : "+str(self.length)
+    def __add__(self,other): # ?”?•˜ê¸? ?—°?‚°? ?‚¬?š©?‹œ ?˜¸ì¶œë˜?Š” ë©”ì„œ?“œ
         return self.length + other.length
     def __lt__(self,other):
         return self.length < other.length
     def __eq__(self,other):
         return self.length == other.length
     
-myLine1 = Line(100) # ê°ì²´í™”, ìƒì„±ì í˜¸ì¶œ
+myLine1 = Line(100) # ê°ì²´?™”, ?ƒ?„±? ?˜¸ì¶?
 myLine2 = Line(200)
 print(myLine1)
 print(myLine2)
 
-print("ë‘ ì„ ì˜ ê¸¸ì´ì˜ í•© : ",myLine1 + myLine2)
-## í”„ë¡œê·¸ë¨ ì¢…ë£Œ : ìƒì„±ëœ ê°ì²´ê°€ ìë™ìœ¼ë¡œ ì†Œë©¸ë¨. ì†Œë©¸ìê°€ í˜¸ì¶œ
+print("?‘ ?„ ?˜ ê¸¸ì´?˜ ?•© : ",myLine1 + myLine2)
+## ?”„ë¡œê·¸?¨ ì¢…ë£Œ : ?ƒ?„±?œ ê°ì²´ê°? ??™?œ¼ë¡? ?†Œë©¸ë¨. ?†Œë©¸ìê°? ?˜¸ì¶?
 
 if myLine1 < myLine2 :
-    print("myLine2ê°€ ë” ê¹ë‹ˆë‹¤.")
+    print("myLine2ê°? ?” ê¹ë‹ˆ?‹¤.")
 elif myLine1 == myLine2 :
-    print("ë‘ ì„ ì˜ ê¸¸ì´ê°€ ê°™ìŠµë‹ˆë‹¤.")
+    print("?‘ ?„ ?˜ ê¸¸ì´ê°? ê°™ìŠµ?‹ˆ?‹¤.")
 else :
-    print("myLine1ì´ ë” ê¹ë‹ˆë‹¤.")
+    print("myLine1?´ ?” ê¹ë‹ˆ?‹¤.")

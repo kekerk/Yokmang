@@ -1,7 +1,7 @@
 '''
 Created on 2018. 12. 21.
 
-classex1.py : í´ë˜ìŠ¤ ì˜ˆì œ
+classex1.py : ?´?˜?Š¤ ?˜ˆ? œ
 @author: gdj4
 '''
 
@@ -9,29 +9,29 @@ class Car :
     color = ""
     speed = 0
     
-    # ë©”ì„œë“œ
-    def upSpeed(self,value): # self : ìê¸° ìì‹ ì´ ê°ì²´ê°€ ë¨. ìë°”ì—ì„œì˜ this
+    # ë©”ì„œ?“œ
+    def upSpeed(self,value): # self : ?ê¸? ??‹ ?´ ê°ì²´ê°? ?¨. ?ë°”ì—?„œ?˜ this
         self.speed += value
-    # ë©”ì„œë“œ
+    # ë©”ì„œ?“œ
     def downSpeed(self,value):
         self.speed -= value
         
 
-myCar1 = Car() # ê°ì²´í™”
+myCar1 = Car() # ê°ì²´?™”
 myCar1.color = "ë¹¨ê°•"
 myCar1.speed = 0
 myCar2 = Car()
-myCar2.color = "íŒŒë‘"
+myCar2.color = "?ŒŒ?‘"
 myCar2.speed = 0
 myCar3 = Car()
-myCar3.color = "ë…¸ë‘"
+myCar3.color = "?…¸?‘"
 myCar3.speed = 0
 
 myCar1.upSpeed(30)
-print("ìë™ì°¨ 1ì˜ ìƒ‰ìƒì€ %s ì´ë©°, í˜„ì¬ ì†ë„ëŠ” %dkm/h ì…ë‹ˆë‹¤." % (myCar1.color,myCar1.speed))
+print("??™ì°? 1?˜ ?ƒ‰?ƒ?? %s ?´ë©?, ?˜„?¬ ?†?„?Š” %dkm/h ?…?‹ˆ?‹¤." % (myCar1.color,myCar1.speed))
 
 myCar2.upSpeed(60)
-print("ìë™ì°¨ 2ì˜ ìƒ‰ìƒì€ %s ì´ë©°, í˜„ì¬ ì†ë„ëŠ” %dkm/h ì…ë‹ˆë‹¤." % (myCar2.color,myCar2.speed))
+print("??™ì°? 2?˜ ?ƒ‰?ƒ?? %s ?´ë©?, ?˜„?¬ ?†?„?Š” %dkm/h ?…?‹ˆ?‹¤." % (myCar2.color,myCar2.speed))
 
 myCar3.upSpeed(10)
-print("ìë™ì°¨ 3ì˜ ìƒ‰ìƒì€ %s ì´ë©°, í˜„ì¬ ì†ë„ëŠ” %dkm/h ì…ë‹ˆë‹¤." % (myCar3.color,myCar3.speed))
+print("??™ì°? 3?˜ ?ƒ‰?ƒ?? %s ?´ë©?, ?˜„?¬ ?†?„?Š” %dkm/h ?…?‹ˆ?‹¤." % (myCar3.color,myCar3.speed))

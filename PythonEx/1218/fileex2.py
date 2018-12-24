@@ -6,10 +6,10 @@ Created on 2018. 12. 18.
 outfp = None
 outfp = open("c:/temp/data2.txt","w")
 while True :
-    outStr = input("ë‚´ìš©ìž…ë ¥: ")
+    outStr = input("?‚´?š©?ž…? ¥: ")
     if outStr != "" :
         outfp.writelines(outStr + "\n")
     else :
         break
 outfp.close()
-print("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ")
+print("?”„ë¡œê·¸?ž¨ ì¢…ë£Œ")
