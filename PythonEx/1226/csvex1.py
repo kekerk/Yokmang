@@ -3,12 +3,13 @@ Created on 2018. 12. 26.
 
 @author: gdj4
 python csvex1.py : input output
-sys.argv[0] : csvex1.py, í”„ë¡œê·¸ë¨ ì´ë¦„
+sys.argv[0] : csvex1.py, ?”„ë¡œê·¸?¨ ?´ë¦?
 sys.argv[1] : input
 sys.argv[2] : output
 '''
 import csv
-import sys # command ë¼ì¸ì—ì„œ ì…ë ¥ê°’ ë°›ê¸°
+import sys  # command ?¼?¸?—?„œ ?…? ¥ê°? ë°›ê¸°
+
 
 input_file = sys.argv[1] # jeju1.csv
 output_file = sys.argv[2] # jeju1_bak.csv
@@ -16,7 +17,7 @@ output_file = sys.argv[2] # jeju1_bak.csv
 with open(input_file,'r',newline="") as filereader : 
     with open(output_file,'w',newline="") as filewriter :
         header = filereader.readline()
-        header = header.strip() # str íƒ€ì…ìœ¼ë¡œ ë³€í™˜ stripì„ ì•ˆ ì“°ë©´ íŠ¹ìˆ˜ë¬¸ìê°€ ì „ë¶€ ë‚˜ì˜¤ê¸° ë•Œë¬¸ì— ë¬¸ìí˜•ìœ¼ë¡œ ë°”ê¾¸ì–´ì¤˜ì„œ íŠ¹ìˆ˜ë¬¸ìë¥¼ ë‚ ë ¤ë²„ë¦°ë‹¤.
+        header = header.strip() # str ???…?œ¼ë¡? ë³??™˜ strip?„ ?•ˆ ?“°ë©? ?Š¹?ˆ˜ë¬¸ìê°? ? „ë¶? ?‚˜?˜¤ê¸? ?•Œë¬¸ì— ë¬¸ì?˜•?œ¼ë¡? ë°”ê¾¸?–´ì¤˜ì„œ ?Š¹?ˆ˜ë¬¸ìë¥? ?‚ ? ¤ë²„ë¦°?‹¤.
         header_list = header.split(",")
         print(header_list)
         filewriter.write(",".join(map(str,header_list))+ "\r\n")

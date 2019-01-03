@@ -5,6 +5,7 @@ Created on 2018. 12. 18.
 '''
 import operator
 
+
 a = 10
 print(type(a))
 a= 1.5

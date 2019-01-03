@@ -1,10 +1,11 @@
 '''
 Created on 2018. 12. 24.
 
-mariadbì™€ ì—°ë™í•˜ê¸°
+mariadb?? ?—°?™?•˜ê¸?
 @author: gdj4
 '''
 import pymysql
+
 
 conn = pymysql.connect(host="localhost",port=3306,user="scott",passwd="tiger",db="bigdb",charset="utf8")
 
@@ -15,7 +16,7 @@ cur.execute(''' create table items (
          name varchar(300),
          price integer) ''')
 
-data = [("ë°”ë‚˜ë‚˜",3000),("ë§ê³ ",30000),("í‚¤ìœ„",100000)]
+data = [("ë°”ë‚˜?‚˜",3000),("ë§ê³ ",30000),("?‚¤?œ„",100000)]
 for i in data :
     cur.execute("insert into items (name,price) values (%s,%s)",i)
 conn.commit()

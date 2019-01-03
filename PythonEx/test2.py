@@ -7,6 +7,7 @@ test2.py : ?ë£Œí˜•
 '''
 from ctypes.wintypes import DOUBLE
 
+
 a=100
 b=50
 #a,b = 100,50 (?´?? ê°™ì? ?˜•?ƒœë¡? ë³??ˆ˜ ?„ ?–¸ ê°??Š¥)

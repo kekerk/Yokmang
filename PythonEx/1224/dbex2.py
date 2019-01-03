@@ -1,10 +1,11 @@
 '''
 Created on 2018. 12. 24.
 
-usertable 조회하기
+usertable 조회?���?
 @author: gdj4
 '''
 import sqlite3
+
 
 con,cur = None,None
 con=sqlite3.connect("iddb")

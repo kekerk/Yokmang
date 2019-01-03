@@ -6,6 +6,7 @@ graph1.py : ê·¸ë˜?”„ ê·¸ë¦¬ê¸?
 
 import matplotlib.pyplot as plt  # pip3 install ggplot
 
+
 plt.style.use("ggplot")
 customers = ["JAVA","JSP","SPRING","HADOOP","PYTHON"] # ë¦¬ìŠ¤?Š¸
 customers_index = range(len(customers)) # 0 ~ 4 ê¹Œì??˜ ê°?

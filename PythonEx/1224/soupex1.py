@@ -1,21 +1,23 @@
 '''
 Created on 2018. 12. 24.
-í¬ë¡¤ë§ í•˜ê¸°
-          ìë°”ì˜ jsoup íˆ´ê³¼ ë¹„ìŠ·í•¨.
+?¬ë¡¤ë§ ?•˜ê¸?
+          ?ë°”ì˜ jsoup ?ˆ´ê³? ë¹„ìŠ·?•¨.
 @author: gdj4
 '''
 
 from bs4 import BeautifulSoup  # pip3 install beautifulsoup4
+
 import urllib.request as req
 
-# CDATA : íŒŒì‹±í•˜ì§€ ì•ŠëŠ” ë¶€ë¶„ ìˆœìˆ˜ ë¬¸ìì—´ë¡œ ì¸ì‹
+
+# CDATA : ?ŒŒ?‹±?•˜ì§? ?•Š?Š” ë¶?ë¶? ?ˆœ?ˆ˜ ë¬¸ì?—´ë¡? ?¸?‹
 url ="http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp"
-# res : urlì˜ ê²°ê³¼ ë°ì´í„°ë¥¼ ì €ì¥
+# res : url?˜ ê²°ê³¼ ?°?´?„°ë¥? ???¥
 res = req.urlopen(url)
-# res : ë¶„ì„í•  ë°ì´í„°
-# "html.parser : html íŒŒì„œë¥¼ ì´ìš©í•´ì„œ ë¶„ì„
-soup = BeautifulSoup(res,"html.parser") # BeautifulSoup ê°ì²´ ìƒì„±
-title = soup.find("title").string # title íƒœê·¸ì˜ ë‚´ìš©
+# res : ë¶„ì„?•  ?°?´?„°
+# "html.parser : html ?ŒŒ?„œë¥? ?´?š©?•´?„œ ë¶„ì„
+soup = BeautifulSoup(res,"html.parser") # BeautifulSoup ê°ì²´ ?ƒ?„±
+title = soup.find("title").string # title ?ƒœê·¸ì˜ ?‚´?š©
 
 wf = soup.find("wf").string
 print(title)

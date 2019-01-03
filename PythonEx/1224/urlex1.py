@@ -6,7 +6,7 @@ import urllib.request
 
 
 url = "http://api.aoikujira.com/ip/ini"
-res= urllib.request.urlopen(url) # url ì—°ê²°í•˜ì—¬ ì‘ë‹µ
+res= urllib.request.urlopen(url) # url ?—°ê²°í•˜?—¬ ?‘?‹µ
 data = res.read()
-text = data.decode("utf-8")  # ë¬¸ìì—´ë¡œ ë³€í™˜í•˜ê¸°
+text = data.decode("utf-8")  # ë¬¸ì?—´ë¡? ë³??™˜?•˜ê¸?
 print(text)

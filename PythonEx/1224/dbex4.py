@@ -1,16 +1,17 @@
 '''
 Created on 2018. 12. 24.
-mariadbì™€ ì—°ë™í•˜ê¸°
+mariadb?? ?—°?™?•˜ê¸?
 @author: gdj4
 '''
-import pymysql # pip3 install mysqlclient ì„¤ì • í•„ìš”
+import pymysql  # pip3 install mysqlclient ?„¤? • ?•„?š”
+
 
 conn = pymysql.connect(host="localhost",port=3306,user="scott",passwd="tiger",db="bigdb",charset="utf8")
 
 try :
     cur = conn.cursor()
     cur.execute("select * from item")
-    # whileì´ë‚˜ forë¬¸ ë‘˜ ì¤‘ ì•„ë¬´ê±°ë‚˜ ì‚¬ìš©í•´ë„ ëœë‹¤.
+    # while?´?‚˜ forë¬? ?‘˜ ì¤? ?•„ë¬´ê±°?‚˜ ?‚¬?š©?•´?„ ?œ?‹¤.
 #     while True :
 #         row = cur.fetchone()
 #         if row == None :

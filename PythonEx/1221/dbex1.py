@@ -2,14 +2,15 @@
 Created on 2018. 12. 21.
 
 @author: gdj4
-dbex1.py : sqlite3 dbì™€ ì—°ê²°í•˜ê¸°
+dbex1.py : sqlite3 db?? ?—°ê²°í•˜ê¸?
 '''
 import sqlite3
 
-dbpath = "test.sqlite" # db ì €ì¥íŒŒì¼ ì´ë¦„
+
+dbpath = "test.sqlite" # db ???¥?ŒŒ?¼ ?´ë¦?
 conn = sqlite3.connect(dbpath)
-cur = conn.cursor() # ëª…ë ¹ ì „ë‹¬ ê°ì²´ ìƒì„±
-# executescript : ì—¬ëŸ¬ê°œì˜ sql êµ¬ë¬¸ì„ ì‹¤í–‰
+cur = conn.cursor() # ëª…ë ¹ ? „?‹¬ ê°ì²´ ?ƒ?„±
+# executescript : ?—¬?Ÿ¬ê°œì˜ sql êµ¬ë¬¸?„ ?‹¤?–‰
 cur.executescript('''
   drop table if exists items;
   create table items (item_id integer primary key,
@@ -19,11 +20,11 @@ cur.executescript('''
   insert into items (name, price) values ('Orange',500);
   insert into items (name, price) values ('Banana',300);
 ''')
-# íŠ¸ëœì ì…˜ ì¢…ë£Œ. ì‹¤ì œë¡œ insert êµ¬ë¬¸ì´ ì‹¤í–‰
+# ?Š¸?œ? ?…˜ ì¢…ë£Œ. ?‹¤? œë¡? insert êµ¬ë¬¸?´ ?‹¤?–‰
 conn.commit()
 cur = conn.cursor()
 cur.execute("select item_id, name,price from items")
-# cur.fetchall() : curì— ì €ì¥ëœ db read ì •ë³´ë¥¼ ì „ë¶€ ì¡°íšŒ
+# cur.fetchall() : cur?— ???¥?œ db read ? •ë³´ë?? ? „ë¶? ì¡°íšŒ
 item_list = cur.fetchall()
 for it in item_list :
     print(it)

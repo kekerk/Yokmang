@@ -6,6 +6,7 @@ Created on 2018. 12. 20.
 
 import random
 
+
 def getNumber():
     return random.randrange(1,46)
 

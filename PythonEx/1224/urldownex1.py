@@ -1,6 +1,6 @@
 '''
 Created on 2018. 12. 24.
-ì„œë²„ì—ì„œ ì´ë¯¸ì§€ ë‹¤ìš´
+?„œë²„ì—?„œ ?´ë¯¸ì? ?‹¤?š´
 @author: gdj4
 '''
 
@@ -8,12 +8,12 @@ import urllib.request
 
 
 url = "http://uta.pw/shodou/img/28/214.png"
-# í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ì €ì¥í•˜ê¸°
+# ?•¨?ˆ˜ë¥? ?´?š©?•˜?—¬ ???¥?•˜ê¸?
 savename= "test2.png"
 #urllib.request.urlretrieve(url,savename)
 
-# íŒŒì¼ì„ ì´ìš©í•˜ì—¬ ì €ì¥í•˜ê¸°
+# ?ŒŒ?¼?„ ?´?š©?•˜?—¬ ???¥?•˜ê¸?
 mem = urllib.request.urlopen(url).read()
 with open(savename,mode="wb") as f :
     f.write(mem)
-print("ì €ì¥ì™„ë£Œ")
+print("???¥?™„ë£?")

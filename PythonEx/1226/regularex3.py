@@ -6,18 +6,19 @@ Created on 2018. 12. 26.
 
 import re
 
+
 string = "The quick brown fox jumps over the lazy dog."
 string_list = string.split()
-# r : row ë¬¸ìí˜•
-# re.I : ëŒ€ì†Œë¬¸ì êµ¬ë¶„ ì—†ì´
+# r : row ë¬¸ì?˜•
+# re.I : ???†Œë¬¸ì êµ¬ë¶„ ?—†?´
 pattern = re.compile(r"The",re.I)
 count = 0
 for word in string_list :
-    if pattern.search(word) : # ê²€ìƒ‰ë˜ë©´ True ë¦¬í„´
+    if pattern.search(word) : # ê²??ƒ‰?˜ë©? True ë¦¬í„´
         count += 1
 print("output #1 {0:d}".format(count))
-# match_word : match_word ê·¸ë£¹ ì´ë¦„ ã…ˆì„¤ì •
-#              ëŒ€ì†Œë¬¸ì êµ¬ë¶„ì—†ì´ The ë¬¸ìë¥¼ match_word ê·¸ë£¹ìœ¼ë¡œ ì„¤ì •
+# match_word : match_word ê·¸ë£¹ ?´ë¦? ?…ˆ?„¤? •
+#              ???†Œë¬¸ì êµ¬ë¶„?—†?´ The ë¬¸ìë¥? match_word ê·¸ë£¹?œ¼ë¡? ?„¤? •
 pattern = re.compile(r"(?P<match_word>The)",re.I)
 print("output #2 : ")
 for word in string_list : 

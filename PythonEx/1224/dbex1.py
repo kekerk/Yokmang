@@ -1,27 +1,28 @@
 '''
 Created on 2018. 12. 24.
 
-dbex2.py : sqlite db ì‚¬ìš©í•˜ê¸°
+dbex2.py : sqlite db ?‚¬?š©?•˜ê¸?
 @author: gdj4
 '''
 import sqlite3
 
+
 con,cur = None,None
 data1,data2,data3,data4 = "","","",""
-con = sqlite3.connect("iddb") # dbì™€ ì—°ê²° ê°ì²´
-cur = con.cursor()            # dbì— sqlêµ¬ë¬¸ ì‹¤í–‰ ê°ì²´    
+con = sqlite3.connect("iddb") # db?? ?—°ê²? ê°ì²´
+cur = con.cursor()            # db?— sqlêµ¬ë¬¸ ?‹¤?–‰ ê°ì²´    
 cur.executescript('''
     create table usertable (id char(4) primary key,
                             username char(15), email char(15), birthyear int)
 ''')
 
 while True : 
-    data1 = input("ì‚¬ìš©ìID = > ")
+    data1 = input("?‚¬?š©?ID = > ")
     if data1 == "" :
         break
-    data2 = input("ì‚¬ìš©ì ì´ë¦„ => ")
-    data3 = input("ì´ë©”ì¼ => ")
-    data4 = input("ì¶œìƒì—°ë„ => ")
+    data2 = input("?‚¬?š©? ?´ë¦? => ")
+    data3 = input("?´ë©”ì¼ => ")
+    data4 = input("ì¶œìƒ?—°?„ => ")
     sql = "insert into usertable values ('"+ data1 +"','"+data2+"','" +data3+"','" +data4+"')"
     cur.execute(sql)
     con.commit()

@@ -1,19 +1,21 @@
 '''
-pandas ëª¨ë“ˆì„ ì´ìš©í•˜ì—¬ csv íŒŒì¼ ìƒì„±í•˜ê¸°
+pandas ëª¨ë“ˆ?„ ?´?š©?•˜?—¬ csv ?ŒŒ?¼ ?ƒ?„±?•˜ê¸?
 '''
 
-import pandas as pd
 import sys
+
+import pandas as pd
+
 
 input_file = sys.argv[1] # supplier_data.csv
 output_file = sys.argv[2] #pandas_out2.csv
 
 data_frame = pd.read_csv(input_file)
 '''
-   row ê²€ìƒ‰
-   loc : ì •ìˆ˜í˜• ì¸ë±ìŠ¤ë¡œ ì„¤ì •
-   iloc : ì •ìˆ˜í˜• ì¸ë±ìŠ¤ë¡œ ì„¤ì •
-   ix   : ì¸ë±ìŠ¤ì˜ í˜•íƒœê°€ ì •ìˆ˜í˜•ì´ ì•„ë‹ˆì–´ë„ ë¨
+   row ê²??ƒ‰
+   loc : ? •?ˆ˜?˜• ?¸?±?Š¤ë¡? ?„¤? •
+   iloc : ? •?ˆ˜?˜• ?¸?±?Š¤ë¡? ?„¤? •
+   ix   : ?¸?±?Š¤?˜ ?˜•?ƒœê°? ? •?ˆ˜?˜•?´ ?•„?‹ˆ?–´?„ ?¨
 '''
 data_frame_in_set = \
    data_frame.loc[data_frame["Invoice Number"].str.startswith("001-"),:]

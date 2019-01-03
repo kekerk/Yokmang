@@ -5,9 +5,10 @@ Created on 2019. 1. 2.
 pandas 데이터를 그래프로 그리기
 '''
 
-import pandas as pd             # 표 정보 모듈
-import numpy as np              # python의 수치계산 모듈
-import matplotlib.pyplot as plt # 그래프를 위한 모듈
+import matplotlib.pyplot as plt  # 그래프를 위한 모듈
+import numpy as np  # python의 수치계산 모듈
+import pandas as pd  # 표 정보 모듈
+
 
 plt.style.use("ggplot")
 

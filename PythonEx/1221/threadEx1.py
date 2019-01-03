@@ -7,6 +7,7 @@ threadEx1.py : ?Š¤? ˆ?“œ êµ¬í˜„?•˜ê¸?
 import threading
 import time
 
+
 class RacingCar : 
     carName = ""
     def __init__(self,name):

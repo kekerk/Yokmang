@@ -3,10 +3,11 @@ Created on 2018. 12. 26.
 
 @author: gdj4
 '''
-import codecs # ë¬¸ìí˜• ëŒ€ìš©ëŸ‰ ë°ì´í„°ë¥¼ ì½ê¸° ìœ„í•œ ëª¨ë“ˆ, ìŠ¤íŠ¸ë¦¬ë°ì„ ìœ„í•œ ëª¨ë“ˆ
+import codecs  # ë¬¸ì?˜• ???š©?Ÿ‰ ?°?´?„°ë¥? ?½ê¸? ?œ„?•œ ëª¨ë“ˆ, ?Š¤?Š¸ë¦¬ë°?„ ?œ„?•œ ëª¨ë“ˆ
+
 
 filename= "jeju1.csv"
-# euc-kr ì½”ë“œë¡œ ì¸ì‹í•´ì„œ read()
+# euc-kr ì½”ë“œë¡? ?¸?‹?•´?„œ read()
 csv = codecs.open(filename,"r","euc-kr").read()
 data=[]
 rows = csv.split("\r\n")

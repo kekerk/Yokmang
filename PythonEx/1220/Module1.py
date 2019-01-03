@@ -9,6 +9,7 @@ Created on 2018. 12. 20.
 import math
 import sys
 
+
 def func1():
     print("Module1.py ?˜ func1() ë©”ì„œ?“œ ?‹¤?–‰")
 def func2():

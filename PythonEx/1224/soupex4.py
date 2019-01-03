@@ -1,23 +1,24 @@
 '''
 Created on 2018. 12. 24.
 
-ëŒë‹¤ë¥¼ ì´ìš©í•œ ì„ íƒ
+?Œ?‹¤ë¥? ?´?š©?•œ ?„ ?ƒ
 @author: gdj4
 '''
 from bs4 import BeautifulSoup
-fp = open("books.html",encoding="utf-8")
-soup = BeautifulSoup(fp,"html.parser") # íŒŒì¼ ì •ë³´ë„ BeautifulSoup ê°ì²´ë¡œ ì´ìš© ê°€ëŠ¥
-# ëŒë‹¤ì‹ì„ ì´ìš©í•˜ì—¬ ì¶œë ¥í•˜ê¸°
-sel = lambda q : print(soup.select_one(q).string)
-sel("#nu") # ì „ì²´ í˜ì´ì§€ì—ì„œ id = "nu" íƒœê·¸ë¥¼ ì„ íƒ
-sel("li#nu") # li íƒœê·¸ ì¤‘ id = "nu" íƒœê·¸ë¥¼ ì„ íƒ
-sel("ul > li#nu") # ul íƒœê·¸ì˜ í•˜ìœ„íƒœê·¸ ì¤‘ li íƒœê·¸ ì¤‘ id="nu" íƒœê·¸ë¥¼ ì„ íƒ
-sel("#bible #nu") # id="bible" ì¸ íƒœê·¸ì˜ í•˜ìœ„ íƒœê·¸ ì¤‘ id="nu"ì¸ íƒœê·¸ë¥¼ ì„ íƒ
-sel("#bible > #nu") # id = "bible" ì¸ íƒœê·¸ì˜ í•˜ìœ„ íƒœê·¸ ì¤‘ id="nu"ì¸ íƒœê·¸ë¥¼ ì„ íƒ
-sel("ul#bible > li#nu")
-sel("li[id='nu']") # li íƒœê·¸ ì¤‘ ì†ì„±ì˜ ê°’ì´ nuì¸ íƒœê·¸ë¥¼ ì„ íƒ
-sel("li:nth-of-type(4)") # li íƒœê·¸ ì¤‘ 4ë²ˆì§¸ì¸ íƒœê·¸ë¥¼ ì„ íƒ
 
-# ê¸°íƒ€ ë°©ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ê¸°
+fp = open("books.html",encoding="utf-8")
+soup = BeautifulSoup(fp,"html.parser") # ?ŒŒ?¼ ? •ë³´ë„ BeautifulSoup ê°ì²´ë¡? ?´?š© ê°??Š¥
+# ?Œ?‹¤?‹?„ ?´?š©?•˜?—¬ ì¶œë ¥?•˜ê¸?
+sel = lambda q : print(soup.select_one(q).string)
+sel("#nu") # ? „ì²? ?˜?´ì§??—?„œ id = "nu" ?ƒœê·¸ë?? ?„ ?ƒ
+sel("li#nu") # li ?ƒœê·? ì¤? id = "nu" ?ƒœê·¸ë?? ?„ ?ƒ
+sel("ul > li#nu") # ul ?ƒœê·¸ì˜ ?•˜?œ„?ƒœê·? ì¤? li ?ƒœê·? ì¤? id="nu" ?ƒœê·¸ë?? ?„ ?ƒ
+sel("#bible #nu") # id="bible" ?¸ ?ƒœê·¸ì˜ ?•˜?œ„ ?ƒœê·? ì¤? id="nu"?¸ ?ƒœê·¸ë?? ?„ ?ƒ
+sel("#bible > #nu") # id = "bible" ?¸ ?ƒœê·¸ì˜ ?•˜?œ„ ?ƒœê·? ì¤? id="nu"?¸ ?ƒœê·¸ë?? ?„ ?ƒ
+sel("ul#bible > li#nu")
+sel("li[id='nu']") # li ?ƒœê·? ì¤? ?†?„±?˜ ê°’ì´ nu?¸ ?ƒœê·¸ë?? ?„ ?ƒ
+sel("li:nth-of-type(4)") # li ?ƒœê·? ì¤? 4ë²ˆì§¸?¸ ?ƒœê·¸ë?? ?„ ?ƒ
+
+# ê¸°í? ë°©ì‹?œ¼ë¡? ì¶œë ¥?•˜ê¸?
 print(soup.select("li")[3].string)
 print(soup.find_all("li")[3].string)
