@@ -65,7 +65,7 @@
 </form>
 <form action="rdelete.bo" method="post">
   <c:forEach var="rlist" items="${rlist}">
-      <input type="hidden" name="rnum" value="${rlist.rnum}">
+<input type="hidden" name="rnum" value="${rlist.rnum}">
 <table border = "1" style="border-collapse: collapse;" class="w3-table-all">
  <tr>
   <td align="center" style="width:1.5%;"><input type="text" class="rating rating-loading" value="${rlist.rating}" data-size="s" readonly="readonly"></td>

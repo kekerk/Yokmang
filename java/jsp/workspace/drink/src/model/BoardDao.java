@@ -11,10 +11,10 @@ import mapper.BoardMapper;
 
 public class BoardDao {
 	private static final String ns = "mapper.BoardMapper.";
-	public int maxNum() { // board Å×ÀÌºíÀÇ ÀúÀåµÈ num ÄÃ·³ÀÇ ÃÖ´ë°ª ¸®ÅÏ
+	public int maxNum() { // board ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ num ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Ö´ë°ª ï¿½ï¿½ï¿½ï¿½
 		SqlSession session = DBConnection.getSession();
 		try {
-			return session.getMapper(BoardMapper.class).maxNum(); // ÀÎµ¦½º °ª
+			return session.getMapper(BoardMapper.class).maxNum(); // ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -49,7 +49,6 @@ public class BoardDao {
 	}
 	public List<Board> list(int pageNum, int limit,String column, String find,int code) {
 		SqlSession session = DBConnection.getSession();
-		// limit ?,? : ½ÃÀÛÀÎµ¦½º(0ºÎÅÍ) ºÎÅÍÀÇ °¹¼ö
 		try {
 			int startrow = (pageNum-1) *limit;
 			Map<String,Object> map = new HashMap<String,Object>();
@@ -149,8 +148,8 @@ public class BoardDao {
 }
 	
 	/*
-	 * bd : ¿ø±ÛÀÇ Á¤º¸ : num, ref, reflevel, refstep
-	 *      ´ä±ÛÀÇ Á¤º¸ : name, pass, title, content
+	 * bd : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : num, ref, reflevel, refstep
+	 *      ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : name, pass, title, content
 	 * 
 	 */
 	
